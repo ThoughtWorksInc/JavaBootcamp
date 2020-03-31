@@ -10,7 +10,7 @@ import java.math.BigDecimal;
 public class ProcessorTests {
 
     private Results createAndProcess(final BigDecimal x, final BigDecimal y) {
-        final Params params = new Params(new BigDecimal(3), new BigDecimal(2));
+        final Params params = new Params(x, y);
         return new Processor().process(params);
     }
 
@@ -36,5 +36,5 @@ public class ProcessorTests {
 
     @Test(expected = ArithmeticException.class)
     public void testProcessWithYZero() {
-        final Results results = createAndProcess(new BigDecimal(0), new BigDecimal(2));
+        final Results results = createAndProcess(new BigDecimal(2), new BigDecimal(0));
     }}
