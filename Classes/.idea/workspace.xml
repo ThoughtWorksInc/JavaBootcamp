@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="64d66a57-a16c-4547-91ac-c20535ca6146" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view />
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1ZtN3xn72u2rPWGjp4HUhKtJy8G" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+  </component>
+  <component name="RunManager" selected="Gradle.ProcessorTests">
+    <configuration name="ProcessorTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests &quot;bootcamp.kata.process.ProcessorTests&quot;" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":cleanTest" />
+            <option value=":test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="Tests in 'bootcamp.kata.process'" type="GradleRunConfiguration" factoryName="Gradle">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests &quot;bootcamp.kata.process.*&quot;" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":cleanTest" />
+            <option value=":test" />
+          </list>
+        </option>
+        <option name="vmOptions" value="" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.ProcessorTests" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="64d66a57-a16c-4547-91ac-c20535ca6146" name="Default Changelist" comment="" />
+      <created>1585654235281</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1585654235281</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="549" y="134" key="#Tests_in_'bootcamp.kata.process'" timestamp="1585656454970">
+      <screen x="0" y="23" width="1680" height="991" />
+    </state>
+    <state x="549" y="134" key="#Tests_in_'bootcamp.kata.process'/-141.-1057.1920.1057/0.23.1680.991@0.23.1680.991" timestamp="1585656454970" />
+    <state width="1358" height="243" key="GridCell.Tab.0.bottom" timestamp="1585667793490">
+      <screen x="0" y="23" width="1680" height="991" />
+    </state>
+    <state width="1358" height="243" key="GridCell.Tab.0.bottom/-141.-1057.1920.1057/0.23.1680.991@0.23.1680.991" timestamp="1585667793490" />
+    <state width="1358" height="243" key="GridCell.Tab.0.center" timestamp="1585667793489">
+      <screen x="0" y="23" width="1680" height="991" />
+    </state>
+    <state width="1358" height="243" key="GridCell.Tab.0.center/-141.-1057.1920.1057/0.23.1680.991@0.23.1680.991" timestamp="1585667793489" />
+    <state width="1358" height="243" key="GridCell.Tab.0.left" timestamp="1585667793489">
+      <screen x="0" y="23" width="1680" height="991" />
+    </state>
+    <state width="1358" height="243" key="GridCell.Tab.0.left/-141.-1057.1920.1057/0.23.1680.991@0.23.1680.991" timestamp="1585667793489" />
+    <state width="1358" height="243" key="GridCell.Tab.0.right" timestamp="1585667793489">
+      <screen x="0" y="23" width="1680" height="991" />
+    </state>
+    <state width="1358" height="243" key="GridCell.Tab.0.right/-141.-1057.1920.1057/0.23.1680.991@0.23.1680.991" timestamp="1585667793489" />
+    <state x="468" y="202" key="NewModule_or_Project.wizard" timestamp="1585666420319">
+      <screen x="0" y="23" width="1680" height="991" />
+    </state>
+    <state x="468" y="202" key="NewModule_or_Project.wizard/-141.-1057.1920.1057/0.23.1680.991@0.23.1680.991" timestamp="1585666420319" />
+    <state x="519" y="333" key="com.intellij.ide.util.TipDialog" timestamp="1585654241400">
+      <screen x="0" y="23" width="1680" height="991" />
+    </state>
+    <state x="519" y="333" key="com.intellij.ide.util.TipDialog/-141.-1057.1920.1057/0.23.1680.991@0.23.1680.991" timestamp="1585654241400" />
+    <state x="234" y="115" key="new project wizard" timestamp="1585666380041">
+      <screen x="0" y="23" width="1680" height="991" />
+    </state>
+    <state x="234" y="115" key="new project wizard/-141.-1057.1920.1057/0.23.1680.991@0.23.1680.991" timestamp="1585666380041" />
+  </component>
+</project>
