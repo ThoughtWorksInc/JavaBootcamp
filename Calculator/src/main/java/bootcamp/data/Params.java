@@ -10,8 +10,8 @@ public class Params {
     private final String operator;
 
     public Params(BigDecimal x, BigDecimal y, String operator) {
-        this.x = x;
-        this.y = y;
+        this.x = x.setScale(2, RoundingMode.HALF_EVEN);
+        this.y = y.setScale(2, RoundingMode.HALF_EVEN);
         this.operator = operator;
     }
 

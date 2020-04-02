@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="bootcamp.calculator.CalculatorTests" tests="6" skipped="0" failures="0" errors="0" timestamp="2020-04-02T15:39:07" hostname="Jamess-MacBook-Pro.local" time="0.005">
+<testsuite name="bootcamp.calculator.CalculatorTests" tests="6" skipped="0" failures="0" errors="0" timestamp="2020-04-02T16:01:08" hostname="Jamess-MacBook-Pro.local" time="0.006">
   <properties/>
-  <testcase name="testAdd" classname="bootcamp.calculator.CalculatorTests" time="0.003"/>
+  <testcase name="testAdd" classname="bootcamp.calculator.CalculatorTests" time="0.004"/>
   <testcase name="testSubtract" classname="bootcamp.calculator.CalculatorTests" time="0.0"/>
   <testcase name="testDivideBy0" classname="bootcamp.calculator.CalculatorTests" time="0.0"/>
   <testcase name="testIncorrectOperator" classname="bootcamp.calculator.CalculatorTests" time="0.0"/>
