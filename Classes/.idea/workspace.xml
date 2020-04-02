@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="64d66a57-a16c-4547-91ac-c20535ca6146" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/test/java/bootcamp/kata/process/ProcessorTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/bootcamp/kata/process/ProcessorTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,6 +43,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
   </component>
   <component name="RunManager" selected="Gradle.ProcessorTests">
     <configuration name="ProcessorTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
