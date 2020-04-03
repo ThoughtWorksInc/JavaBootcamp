@@ -8,7 +8,6 @@ public class Params {
     private final String operator;
 
     public Params(final BigDecimal x, final BigDecimal y, final String operator) {
-
         this.x = x;
         this.y = y;
         this.operator = operator;

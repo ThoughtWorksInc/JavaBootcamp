@@ -26,6 +26,6 @@ public class Calculator {
             default:
                 throw new IllegalArgumentException("Not a valid input");
         }
-        return result.setScale(2, BigDecimal.ROUND_HALF_EVEN).stripTrailingZeros();
+        return result.round(MathContext.DECIMAL64).stripTrailingZeros();
     }
 }
