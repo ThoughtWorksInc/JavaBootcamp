@@ -38,6 +38,11 @@ public class Processor {
     }
 
     public double getValue(int i){
-        return arr[i];
+        try {
+            return arr[i];
+        }catch(Exception e){
+            System.out.println("Your chosen index is out of bounds. Please try again.");
+            return Double.NaN;
+        }
     }
 }

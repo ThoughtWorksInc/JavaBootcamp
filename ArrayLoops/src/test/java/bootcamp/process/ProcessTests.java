@@ -39,15 +39,15 @@ public class ProcessTests {
         assertEquals(-3.76, new Processor(arr).getValue(3), 0.01);
     }
 
-    @Test(expected = ArrayIndexOutOfBoundsException.class)
+    @Test
     public void testGetValueOutOfArrayBounds() {
         double[] arr = {3, 4, 2, 7};
-        final double value = new Processor(arr).getValue(5);
+        assertEquals(Double.NaN, new Processor(arr).getValue(6), 0.01);
     }
 
-    @Test(expected = ArrayIndexOutOfBoundsException.class)
+    @Test
     public void testGetValueOutOfEmptyArray() {
         double[] arr = {};
-        final double value = new Processor(arr).getValue(0);
+        assertEquals(Double.NaN, new Processor(arr).getValue(0), 0.01);
     }
 }
