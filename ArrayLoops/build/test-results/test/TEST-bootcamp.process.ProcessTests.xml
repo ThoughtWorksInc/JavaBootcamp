@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="bootcamp.process.ProcessTests" tests="4" skipped="0" failures="0" errors="0" timestamp="2020-04-03T13:21:43" hostname="Wills-MacBook-Pro.local" time="0.003">
+  <properties/>
+  <testcase name="testGetValue" classname="bootcamp.process.ProcessTests" time="0.002"/>
+  <testcase name="testGetSummary" classname="bootcamp.process.ProcessTests" time="0.0"/>
+  <testcase name="testGetSummaryEmptyArray" classname="bootcamp.process.ProcessTests" time="0.0"/>
+  <testcase name="testGetValueOutOfArrayBounds" classname="bootcamp.process.ProcessTests" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

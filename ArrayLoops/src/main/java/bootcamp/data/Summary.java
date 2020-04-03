@@ -1,29 +1,37 @@
 package bootcamp.data;
 
 public class Summary {
-    private final double min = Double.NaN; //FIXME
-    private final double max = Double.NaN; //FIXME
-    private final double sum = Double.NaN; //FIXME
-    private final double count = Double.NaN; //FIXME
-    private final double average = Double.NaN; //FIXME
+    private final double _min;
+    private final double _max;
+    private final double _sum;
+    private final double _count;
+    private final double _average;
+
+    public Summary(double min, double max, double sum, double count, double average) {
+        _min = min;
+        _max = max;
+        _sum = sum;
+        _count = count;
+        _average = average;
+    }
 
     public double getMin() {
-        return min;
+        return _min;
     }
 
     public double getMax() {
-        return max;
+        return _max;
     }
 
     public double getSum() {
-        return sum;
+        return _sum;
     }
 
     public double getCount() {
-        return count;
+        return _count;
     }
 
     public double getAverage() {
-        return average;
+        return _average;
     }
 }
