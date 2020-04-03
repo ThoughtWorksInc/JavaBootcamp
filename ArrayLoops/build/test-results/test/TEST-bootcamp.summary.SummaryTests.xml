@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="bootcamp.summary.SummaryTests" tests="10" skipped="0" failures="0" errors="0" timestamp="2020-04-03T13:15:09" hostname="Jamess-MacBook-Pro.local" time="0.006">
+  <properties/>
+  <testcase name="getMaximumValueFromEmptyArray" classname="bootcamp.summary.SummaryTests" time="0.003"/>
+  <testcase name="getCountFromEmptyArray" classname="bootcamp.summary.SummaryTests" time="0.0"/>
+  <testcase name="getMaximumValue" classname="bootcamp.summary.SummaryTests" time="0.0"/>
+  <testcase name="getMinimumValue" classname="bootcamp.summary.SummaryTests" time="0.0"/>
+  <testcase name="getSum" classname="bootcamp.summary.SummaryTests" time="0.0"/>
+  <testcase name="getMinimumValueFromEmptyArray" classname="bootcamp.summary.SummaryTests" time="0.0"/>
+  <testcase name="getSumFromEmptyArray" classname="bootcamp.summary.SummaryTests" time="0.0"/>
+  <testcase name="getAverageFromEmptyArray" classname="bootcamp.summary.SummaryTests" time="0.0"/>
+  <testcase name="getAverage" classname="bootcamp.summary.SummaryTests" time="0.002"/>
+  <testcase name="getCount" classname="bootcamp.summary.SummaryTests" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
