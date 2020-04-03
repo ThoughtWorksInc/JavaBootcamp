@@ -1,5 +1,7 @@
 package bootcamp.data;
 
+import java.util.OptionalDouble;
+
 public class Processor {
     private double[] _numArray;
 
@@ -31,12 +33,12 @@ public class Processor {
         return new Summary(min, max, sum, count, average);
     }
 
-    public double getValue(int index) {
+    public OptionalDouble getValue(int index) {
         try {
-            return _numArray[index];
+            return OptionalDouble.of(_numArray[index]);
 
         } catch(IndexOutOfBoundsException error) {
-            return Double.NaN;
+            return OptionalDouble.empty();
         }
     }
 }

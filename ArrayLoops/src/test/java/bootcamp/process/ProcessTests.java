@@ -5,6 +5,8 @@ import bootcamp.data.Summary;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.OptionalDouble;
+
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.*;
 
@@ -47,7 +49,7 @@ public class ProcessTests {
                 2, 3, 5, 6
         };
         _processor = new Processor(_numArray);
-        double val =_processor.getValue(0);
+        Double val =_processor.getValue(0).getAsDouble();
         assertThat(val, is(2.0));
     }
 
@@ -55,7 +57,7 @@ public class ProcessTests {
     public void testGetValueOutOfArrayBounds() {
         _numArray = new double[]{};
         _processor = new Processor(_numArray);
-        double val = _processor.getValue(0);
-        assertThat(val, is(Double.NaN));
+        OptionalDouble val = _processor.getValue(0);
+        assertThat(val, is(OptionalDouble.empty()));
     }
 }
