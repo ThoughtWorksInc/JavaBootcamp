@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="bootcamp.calculator.CalculatorTests" tests="6" skipped="0" failures="0" errors="0" timestamp="2020-04-02T16:32:43" hostname="Glorias-MacBook-Pro.local" time="0.008">
+  <properties/>
+  <testcase name="testAdd" classname="bootcamp.calculator.CalculatorTests" time="0.005"/>
+  <testcase name="testSubtract" classname="bootcamp.calculator.CalculatorTests" time="0.0"/>
+  <testcase name="testDivideBy0" classname="bootcamp.calculator.CalculatorTests" time="0.0"/>
+  <testcase name="testIncorrectOperator" classname="bootcamp.calculator.CalculatorTests" time="0.0"/>
+  <testcase name="testMutiply" classname="bootcamp.calculator.CalculatorTests" time="0.0"/>
+  <testcase name="testDivide" classname="bootcamp.calculator.CalculatorTests" time="0.002"/>
+  <system-out><![CDATA[adding
+subtracting
+dividing
+multiplying
+dividing
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
