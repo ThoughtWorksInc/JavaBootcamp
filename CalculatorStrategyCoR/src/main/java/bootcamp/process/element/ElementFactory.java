@@ -12,7 +12,7 @@ public abstract class ElementFactory {
     //The 2nd constructor only takes the operator for this factory and sets nextFactory to null. This means that this
     //factory is the last in the chain.
 
-    public  Optional<ElementFactory> getFactory(final String operator) {
+    public  Optional<ProcessingElement> getProcessingElement(final String operator) {
         /* TODO
          * Compare operator passed as argument with operator instance variable. If they are the same, return this object
          * wrapped in an Optional object. If they are not the same, call the getFactory method of nextFactory passing it the
