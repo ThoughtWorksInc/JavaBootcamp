@@ -14,12 +14,13 @@ public class PersonLocator {
 
     public Optional<Location> find(final Person person) {
         for (int x = 0; x < _people.length; x++) {
-            for (int y = 0; y < _people.length; y++) {
-                if (_people[x][y].equals(person)) {
+            for (int y = 0; y < _people[x].length; y++) {
+                if (person.equals(_people[x][y])) {
                     return Optional.of(new Location(x, y));
                 }
             }
         }
+
         return Optional.empty();
     }
 }

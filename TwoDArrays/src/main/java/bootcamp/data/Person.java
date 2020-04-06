@@ -3,20 +3,20 @@ package bootcamp.data;
 import java.util.Objects;
 
 public class Person {
-    private final String lastName;
-    private final String firstName;
+    private final String _lastName;
+    private final String _firstName;
 
-    public Person() {
-        firstName = null;
-        lastName = null;
+    public Person(String firstName, String lastName) {
+        _firstName = firstName;
+        _lastName = lastName;
     }
 
     public String getFirstName() {
-        return firstName;
+        return _firstName;
     }
 
     public String getLastName() {
-        return lastName;
+        return _lastName;
     }
 
     @Override
@@ -24,12 +24,12 @@ public class Person {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Person person = (Person) o;
-        return Objects.equals(lastName, person.lastName) &&
-                Objects.equals(firstName, person.firstName);
+        return Objects.equals(_lastName, person._lastName) &&
+                Objects.equals(_firstName, person._firstName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(lastName, firstName);
+        return Objects.hash(_lastName, _firstName);
     }
 }
