@@ -2,7 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="64d66a57-a16c-4547-91ac-c20535ca6146" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/classAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/jarAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/jarAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/taskHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,6 +57,9 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunManager" selected="Gradle.ProcessorTests">
     <configuration name="ProcessorTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
@@ -92,6 +108,18 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -102,30 +130,38 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1585654235281</updated>
+      <workItem from="1586019475252" duration="2884000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
     <state x="549" y="134" key="#Tests_in_'bootcamp.kata.process'" timestamp="1585656454970">
       <screen x="0" y="23" width="1680" height="991" />
     </state>
     <state x="549" y="134" key="#Tests_in_'bootcamp.kata.process'/-141.-1057.1920.1057/0.23.1680.991@0.23.1680.991" timestamp="1585656454970" />
-    <state width="1358" height="243" key="GridCell.Tab.0.bottom" timestamp="1585667793490">
-      <screen x="0" y="23" width="1680" height="991" />
+    <state width="1638" height="311" key="GridCell.Tab.0.bottom" timestamp="1586022591530">
+      <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state width="1358" height="243" key="GridCell.Tab.0.bottom/-141.-1057.1920.1057/0.23.1680.991@0.23.1680.991" timestamp="1585667793490" />
-    <state width="1358" height="243" key="GridCell.Tab.0.center" timestamp="1585667793489">
-      <screen x="0" y="23" width="1680" height="991" />
+    <state width="1638" height="311" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1586022591530" />
+    <state width="1638" height="311" key="GridCell.Tab.0.center" timestamp="1586022591519">
+      <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state width="1358" height="243" key="GridCell.Tab.0.center/-141.-1057.1920.1057/0.23.1680.991@0.23.1680.991" timestamp="1585667793489" />
-    <state width="1358" height="243" key="GridCell.Tab.0.left" timestamp="1585667793489">
-      <screen x="0" y="23" width="1680" height="991" />
+    <state width="1638" height="311" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1586022591519" />
+    <state width="1638" height="311" key="GridCell.Tab.0.left" timestamp="1586022591518">
+      <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state width="1358" height="243" key="GridCell.Tab.0.left/-141.-1057.1920.1057/0.23.1680.991@0.23.1680.991" timestamp="1585667793489" />
-    <state width="1358" height="243" key="GridCell.Tab.0.right" timestamp="1585667793489">
-      <screen x="0" y="23" width="1680" height="991" />
+    <state width="1638" height="311" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1586022591518" />
+    <state width="1638" height="311" key="GridCell.Tab.0.right" timestamp="1586022591529">
+      <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state width="1358" height="243" key="GridCell.Tab.0.right/-141.-1057.1920.1057/0.23.1680.991@0.23.1680.991" timestamp="1585667793489" />
+    <state width="1638" height="311" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1586022591529" />
     <state x="468" y="202" key="NewModule_or_Project.wizard" timestamp="1585666420319">
       <screen x="0" y="23" width="1680" height="991" />
     </state>
