@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="bootcamp.data.PersonTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-04-06T11:06:40" hostname="Jamess-MacBook-Pro.local" time="0.001">
-  <properties/>
-  <testcase name="equalsMethodFalseMatch" classname="bootcamp.data.PersonTests" time="0.001"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

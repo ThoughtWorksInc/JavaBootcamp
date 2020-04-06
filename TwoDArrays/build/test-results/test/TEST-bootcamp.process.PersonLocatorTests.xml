@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="bootcamp.process.PersonLocatorTests" tests="3" skipped="0" failures="0" errors="0" timestamp="2020-04-06T14:40:44" hostname="Jamess-MacBook-Pro.local" time="0.003">
+  <properties/>
+  <testcase name="findCorrectPersonX" classname="bootcamp.process.PersonLocatorTests" time="0.002"/>
+  <testcase name="findCorrectPersonY" classname="bootcamp.process.PersonLocatorTests" time="0.001"/>
+  <testcase name="dontFindWrongPerson" classname="bootcamp.process.PersonLocatorTests" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

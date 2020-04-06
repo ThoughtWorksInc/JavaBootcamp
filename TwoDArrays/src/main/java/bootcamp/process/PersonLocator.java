@@ -15,14 +15,18 @@ public class PersonLocator {
 
     public Optional<Location> find(final Person person) {
         Optional<Location> location = Optional.empty();
-        outerloop:
-        for (int i = 0; i < people.length; i++) {
-            for (int j = 0; j < people[i].length; j++) {
-                if (person.equals(people[i][j])) {
-                    location = Optional.of(new Location(i,j));
-                    break outerloop;
+        int x = 0;
+        boolean done = false;
+        while (x < people.length && !done) {
+            int y = 0;
+            while (y < people[x].length && !done) {
+                if (person.equals(people[x][y])) {
+                    location = Optional.of(new Location(x, y));
+                    done = true;
                 }
+                y++;
             }
+            x++;
         }
         return location;
     }
