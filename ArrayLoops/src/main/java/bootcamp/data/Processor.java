@@ -36,7 +36,6 @@ public class Processor {
     public OptionalDouble getValue(int index) {
         try {
             return OptionalDouble.of(_numArray[index]);
-
         } catch(IndexOutOfBoundsException error) {
             return OptionalDouble.empty();
         }

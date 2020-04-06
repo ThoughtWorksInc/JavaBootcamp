@@ -37,4 +37,5 @@ public class ProcessorTests {
     @Test(expected = ArithmeticException.class)
     public void testProcessWithYZero() {
         final Results results = createAndProcess(new BigDecimal(2), new BigDecimal(0));
+        assertEquals(new BigDecimal(0), results.getQuotient());
     }}

@@ -2,7 +2,34 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="64d66a57-a16c-4547-91ac-c20535ca6146" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Calculator/.gradle/5.2.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../Calculator/.gradle/5.2.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Calculator/.gradle/5.2.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../Calculator/.gradle/5.2.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Calculator/.gradle/5.2.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../Calculator/.gradle/5.2.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Calculator/.gradle/5.2.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../Calculator/.gradle/5.2.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Calculator/.gradle/5.2.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../Calculator/.gradle/5.2.1/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Calculator/.gradle/5.2.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../Calculator/.gradle/5.2.1/javaCompile/taskHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Calculator/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../Calculator/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Calculator/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../Calculator/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Calculator/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../Calculator/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Calculator/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Calculator/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/classAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/jarAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/jarAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/taskHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bootcamp/kata/data/Params.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bootcamp/kata/data/Params.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bootcamp/kata/data/Results.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bootcamp/kata/data/Results.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bootcamp/kata/process/Processor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bootcamp/kata/process/Processor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/bootcamp/kata/process/ProcessorTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/bootcamp/kata/process/ProcessorTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,7 +47,12 @@
         <task path="$PROJECT_DIR$">
           <activation />
         </task>
-        <projects_view />
+        <projects_view>
+          <tree_state>
+            <expand />
+            <select />
+          </tree_state>
+        </projects_view>
       </state>
     </system>
   </component>
@@ -44,6 +76,11 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
   </component>
   <component name="RunManager" selected="Gradle.ProcessorTests">
     <configuration name="ProcessorTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
@@ -52,6 +89,26 @@
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
         <option name="scriptParameters" value="--tests &quot;bootcamp.kata.process.ProcessorTests&quot;" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":cleanTest" />
+            <option value=":test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="ProcessorTests.testProcessWithYZero" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests &quot;bootcamp.kata.process.ProcessorTests.testProcessWithYZero&quot;" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -89,6 +146,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.ProcessorTests" />
+        <item itemvalue="Gradle.ProcessorTests.testProcessWithYZero" />
       </list>
     </recent_temporary>
   </component>
@@ -102,38 +160,81 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1585654235281</updated>
+      <workItem from="1585820396548" duration="3586000" />
+      <workItem from="1585824657170" duration="1597000" />
+      <workItem from="1585838478484" duration="179000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
     <state x="549" y="134" key="#Tests_in_'bootcamp.kata.process'" timestamp="1585656454970">
       <screen x="0" y="23" width="1680" height="991" />
     </state>
     <state x="549" y="134" key="#Tests_in_'bootcamp.kata.process'/-141.-1057.1920.1057/0.23.1680.991@0.23.1680.991" timestamp="1585656454970" />
-    <state width="1358" height="243" key="GridCell.Tab.0.bottom" timestamp="1585667793490">
-      <screen x="0" y="23" width="1680" height="991" />
+    <state x="653" y="205" key="#com.intellij.ide.util.MemberChooser" timestamp="1585821237680">
+      <screen x="0" y="23" width="1680" height="949" />
+    </state>
+    <state x="653" y="205" key="#com.intellij.ide.util.MemberChooser/0.23.1680.949@0.23.1680.949" timestamp="1585821237680" />
+    <state x="689" y="393" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1585820690639">
+      <screen x="0" y="23" width="1680" height="949" />
+    </state>
+    <state x="689" y="393" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.23.1680.949@0.23.1680.949" timestamp="1585820690639" />
+    <state width="1680" height="322" key="GridCell.Tab.0.bottom" timestamp="1585832341838">
+      <screen x="0" y="23" width="1680" height="949" />
     </state>
     <state width="1358" height="243" key="GridCell.Tab.0.bottom/-141.-1057.1920.1057/0.23.1680.991@0.23.1680.991" timestamp="1585667793490" />
-    <state width="1358" height="243" key="GridCell.Tab.0.center" timestamp="1585667793489">
-      <screen x="0" y="23" width="1680" height="991" />
+    <state width="1680" height="322" key="GridCell.Tab.0.bottom/0.23.1680.949@0.23.1680.949" timestamp="1585832341838" />
+    <state width="1680" height="322" key="GridCell.Tab.0.center" timestamp="1585832341838">
+      <screen x="0" y="23" width="1680" height="949" />
     </state>
     <state width="1358" height="243" key="GridCell.Tab.0.center/-141.-1057.1920.1057/0.23.1680.991@0.23.1680.991" timestamp="1585667793489" />
-    <state width="1358" height="243" key="GridCell.Tab.0.left" timestamp="1585667793489">
-      <screen x="0" y="23" width="1680" height="991" />
+    <state width="1680" height="322" key="GridCell.Tab.0.center/0.23.1680.949@0.23.1680.949" timestamp="1585832341838" />
+    <state width="1680" height="322" key="GridCell.Tab.0.left" timestamp="1585832341837">
+      <screen x="0" y="23" width="1680" height="949" />
     </state>
     <state width="1358" height="243" key="GridCell.Tab.0.left/-141.-1057.1920.1057/0.23.1680.991@0.23.1680.991" timestamp="1585667793489" />
-    <state width="1358" height="243" key="GridCell.Tab.0.right" timestamp="1585667793489">
-      <screen x="0" y="23" width="1680" height="991" />
+    <state width="1680" height="322" key="GridCell.Tab.0.left/0.23.1680.949@0.23.1680.949" timestamp="1585832341837" />
+    <state width="1680" height="322" key="GridCell.Tab.0.right" timestamp="1585832341838">
+      <screen x="0" y="23" width="1680" height="949" />
     </state>
     <state width="1358" height="243" key="GridCell.Tab.0.right/-141.-1057.1920.1057/0.23.1680.991@0.23.1680.991" timestamp="1585667793489" />
+    <state width="1680" height="322" key="GridCell.Tab.0.right/0.23.1680.949@0.23.1680.949" timestamp="1585832341838" />
+    <state width="1680" height="322" key="GridCell.Tab.1.bottom" timestamp="1585832341839">
+      <screen x="0" y="23" width="1680" height="949" />
+    </state>
+    <state width="1680" height="322" key="GridCell.Tab.1.bottom/0.23.1680.949@0.23.1680.949" timestamp="1585832341839" />
+    <state width="1680" height="322" key="GridCell.Tab.1.center" timestamp="1585832341838">
+      <screen x="0" y="23" width="1680" height="949" />
+    </state>
+    <state width="1680" height="322" key="GridCell.Tab.1.center/0.23.1680.949@0.23.1680.949" timestamp="1585832341838" />
+    <state width="1680" height="322" key="GridCell.Tab.1.left" timestamp="1585832341838">
+      <screen x="0" y="23" width="1680" height="949" />
+    </state>
+    <state width="1680" height="322" key="GridCell.Tab.1.left/0.23.1680.949@0.23.1680.949" timestamp="1585832341838" />
+    <state width="1680" height="322" key="GridCell.Tab.1.right" timestamp="1585832341839">
+      <screen x="0" y="23" width="1680" height="949" />
+    </state>
+    <state width="1680" height="322" key="GridCell.Tab.1.right/0.23.1680.949@0.23.1680.949" timestamp="1585832341839" />
     <state x="468" y="202" key="NewModule_or_Project.wizard" timestamp="1585666420319">
       <screen x="0" y="23" width="1680" height="991" />
     </state>
     <state x="468" y="202" key="NewModule_or_Project.wizard/-141.-1057.1920.1057/0.23.1680.991@0.23.1680.991" timestamp="1585666420319" />
-    <state x="519" y="333" key="com.intellij.ide.util.TipDialog" timestamp="1585654241400">
-      <screen x="0" y="23" width="1680" height="991" />
+    <state x="328" y="79" key="SettingsEditor" timestamp="1585820849193">
+      <screen x="0" y="23" width="1680" height="949" />
+    </state>
+    <state x="328" y="79" key="SettingsEditor/0.23.1680.949@0.23.1680.949" timestamp="1585820849193" />
+    <state x="570" y="236" width="540" height="524" key="StructurePopup" timestamp="1585825056226">
+      <screen x="0" y="23" width="1680" height="949" />
+    </state>
+    <state x="570" y="236" width="540" height="524" key="StructurePopup/0.23.1680.949@0.23.1680.949" timestamp="1585825056226" />
+    <state x="519" y="320" key="com.intellij.ide.util.TipDialog" timestamp="1585824659433">
+      <screen x="0" y="23" width="1680" height="949" />
     </state>
     <state x="519" y="333" key="com.intellij.ide.util.TipDialog/-141.-1057.1920.1057/0.23.1680.991@0.23.1680.991" timestamp="1585654241400" />
+    <state x="519" y="320" key="com.intellij.ide.util.TipDialog/0.23.1680.949@0.23.1680.949" timestamp="1585824659433" />
     <state x="234" y="115" key="new project wizard" timestamp="1585666380041">
       <screen x="0" y="23" width="1680" height="991" />
     </state>
