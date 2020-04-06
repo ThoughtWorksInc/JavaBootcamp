@@ -15,16 +15,18 @@ public class PersonLocator {
     public Optional<Location> find(final Person person) {
         Location location = null;
 
-        for(int column = 0; column<people.length; column++){
-            for(int row = 0; row<people[column].length; row++){
-                Person currentPerson = people[column][row];
-                if(person.equals(currentPerson)){
-                    location = new Location(row, column);
-                    break;
-                }
+
+        int row = 0;
+        int column = 0;
+        while(column < this.people.length){
+            row = 0;
+            while(row < this.people[column].length && !person.equals(people[column][row])){
+                row++;
             }
+            column++;
         }
-        return Optional.ofNullable(location);
+
+        return Optional.ofNullable(new Location(row, column));
     }
 
 }
