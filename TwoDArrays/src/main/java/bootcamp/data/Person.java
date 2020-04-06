@@ -1,10 +1,24 @@
 package bootcamp.data;
 
 public class Person {
-    private final String firstName = null; //FIXME
-    private final String lastName = null; //FIXME
+    private final String firstName;
+    private final String lastName;
 
-    //TODO Constructor
-    //TODO getters
-    //TODO override equals
+    Person(String firstName, String lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public boolean equals(Person otherPerson) {
+        return getFirstName().equals(otherPerson.getFirstName()) &&
+                getLastName().equals(otherPerson.getLastName());
+    }
 }
