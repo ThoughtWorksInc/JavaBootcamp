@@ -1,6 +1,6 @@
 *.idea/
 *.iml
-*.gradle
+.gradle/
 *.class
 *.ctxt
 .mtj.tmp/
