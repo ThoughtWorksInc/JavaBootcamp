@@ -4,7 +4,7 @@ public class Person {
     private final String firstName;
     private final String lastName;
 
-    Person(String firstName, String lastName) {
+    public Person(String firstName, String lastName) {
         this.firstName = firstName;
         this.lastName = lastName;
     }
@@ -17,8 +17,11 @@ public class Person {
         return lastName;
     }
 
-    public boolean equals(Person otherPerson) {
-        return getFirstName().equals(otherPerson.getFirstName()) &&
-                getLastName().equals(otherPerson.getLastName());
+    public boolean equals(Person foundPerson) {
+        if (foundPerson == null ) {
+            return false;
+        }
+        return getFirstName().equals(foundPerson.getFirstName()) &&
+                getLastName().equals(foundPerson.getLastName());
     }
 }

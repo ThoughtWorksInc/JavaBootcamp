@@ -8,7 +8,7 @@ import java.util.Optional;
 public class PersonLocator {
     private final Person[][] people;
 
-    PersonLocator(Person[][] people) {
+    public PersonLocator(Person[][] people) {
         this.people = people;
     }
 
