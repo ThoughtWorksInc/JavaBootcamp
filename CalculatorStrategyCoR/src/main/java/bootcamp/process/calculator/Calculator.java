@@ -11,7 +11,7 @@ import java.util.Optional;
 public class Calculator {
     private final ElementFactory factory;
 
-    Calculator() {
+    public Calculator() {
         DividerFactory dividerFactory = new DividerFactory("/");
         MultiplierFactory multiplierFactory = new MultiplierFactory(dividerFactory, "x");
         SubtractorFactory subtractorFactory = new SubtractorFactory(multiplierFactory, "-");
