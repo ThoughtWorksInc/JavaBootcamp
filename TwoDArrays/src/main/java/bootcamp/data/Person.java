@@ -17,11 +17,15 @@ public class Person {
         return lastName;
     }
 
-    public boolean equals(Person foundPerson) {
-        if (foundPerson == null ) {
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        return getFirstName().equals(foundPerson.getFirstName()) &&
-                getLastName().equals(foundPerson.getLastName());
+        Person person = (Person) o;
+        return firstName == person.getFirstName() &&
+                lastName == person.getLastName();
     }
 }
