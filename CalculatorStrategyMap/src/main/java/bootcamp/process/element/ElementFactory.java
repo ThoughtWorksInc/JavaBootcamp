@@ -1,12 +1,22 @@
 package bootcamp.process.element;
 
+import bootcamp.process.element.impl.Adder;
+import bootcamp.process.element.impl.Divider;
+import bootcamp.process.element.impl.Multiplier;
+import bootcamp.process.element.impl.Subtractor;
+
+import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
 
-public abstract class ElementFactory {
-    protected final Map<String, ProcessingElement> elementMap = null; //FIXME
+public class ElementFactory {
+    public Map<String, ProcessingElement> elementMap;
 
-    //TODO create a constructor that instantiates the elementMap and populate it.
-
-    public abstract Optional<ProcessingElement> create(final String operator);
+    public ElementFactory() {
+        this.elementMap = new HashMap<>();;
+        elementMap.put("+", new Adder());
+        elementMap.put("-", new Subtractor());
+        elementMap.put("x", new Multiplier());
+        elementMap.put("/", new Divider());
+    }
 }
