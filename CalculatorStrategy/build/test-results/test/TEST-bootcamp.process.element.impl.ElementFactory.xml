@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="bootcamp.process.element.impl.ElementFactory" tests="5" skipped="0" failures="0" errors="0" timestamp="2020-04-07T11:22:18" hostname="Jamess-MacBook-Pro.local" time="0.008">
+  <properties/>
+  <testcase name="testCorrectElementForAddition" classname="bootcamp.process.element.impl.ElementFactory" time="0.001"/>
+  <testcase name="testCorrectElementForSubtraction" classname="bootcamp.process.element.impl.ElementFactory" time="0.001"/>
+  <testcase name="testCorrectElementForDividing" classname="bootcamp.process.element.impl.ElementFactory" time="0.002"/>
+  <testcase name="testIncorrectOperator" classname="bootcamp.process.element.impl.ElementFactory" time="0.0"/>
+  <testcase name="testCorrectElementForMultiplying" classname="bootcamp.process.element.impl.ElementFactory" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
