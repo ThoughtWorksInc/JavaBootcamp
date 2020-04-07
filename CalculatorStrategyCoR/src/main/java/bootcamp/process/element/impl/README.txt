@@ -1,2 +1,0 @@
-Implement the interface here for processing elements (Adder, Subtractor, Multiplier and Divider) and
-element factory extensions (adder factory, subtractor factory, multiplier factory and divider factory).
