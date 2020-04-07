@@ -20,14 +20,14 @@ public class Calculator {
     public Result calculate(final Params params) {
         Optional<ProcessingElement> processingElement = factory.create(params.getOperator());
         if (!processingElement.isPresent()) {
-            return new Result(Status.INVALID_OPERATION, "Invalid operator provided.", Optional.empty());
+            return new Result(Status.INVALID_OPERATION, "Invalid operator provided.");
         }
 
         try {
             BigDecimal value = processingElement.get().process(params.getX(), params.getY());
-            return new Result(Status.SUCCESS, null, Optional.ofNullable(value));
+            return new Result(Optional.ofNullable(value));
         } catch(Exception e) {
-            return new Result(Status.ARITHMETIC_ERROR, e.getMessage(), Optional.empty());
+            return new Result(Status.ARITHMETIC_ERROR, e.getMessage());
         }
     }
 }
