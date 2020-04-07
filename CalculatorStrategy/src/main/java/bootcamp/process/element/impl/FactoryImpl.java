@@ -7,7 +7,6 @@ import java.util.Optional;
 
 public class FactoryImpl implements ElementFactory {
     public Optional<ProcessingElement> create(final String operator) {
-        ProcessingElement processor;
         switch(operator) {
             case "+":
                 return Optional.ofNullable(new Adder());
