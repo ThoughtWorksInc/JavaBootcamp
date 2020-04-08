@@ -11,21 +11,27 @@ public class AddressDirectory {
 
     public AddressDirectory(final List<PersonAddressPair> addressList) {
         directory = new TreeMap<>(new Comparator<Person>() {
-            //FIXME
+            @Override
+            public int compare(Person personOne, Person personTwo) {
+                return CharSequence.compare(personOne.getFirstName(), personTwo.getFirstName());
+            }
         });
-        //TODO convert addressList to a TreeMap assigned to directory.
+        for (PersonAddressPair pair : addressList) {
+            directory.put(pair.getPerson(), pair.getAddress());
+        }
     }
 
     public Optional<Address> getAddress(final Person person) {
-        //FIXME
-        return null;
+        Optional<Address> address = Optional.ofNullable(directory.get(person));
+
+        return address.isPresent() ? address : Optional.empty();
     }
 
     public void updateAddress(final PersonAddressPair personAddress) {
-        //FIXME
+        directory.put(personAddress.getPerson(), personAddress.getAddress());
     }
 
     public void remove(final Person person) {
-        //FIXME
+        directory.remove(person);
     }
 }
