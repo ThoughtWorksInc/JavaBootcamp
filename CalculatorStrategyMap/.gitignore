@@ -1,15 +1,8 @@
-*.idea/
-*.iml
-*.gradle
+.DS_Store
+
+### Java ###
 *.class
-*.ctxt
-.mtj.tmp/
-*.jar
-*.war
-*.ear
-hs_err_pid*
+
+### Gradle ###
 .gradle
 /build/
-gradle-app.setting
-!gradle-wrapper.jar
-.gradletasknamecache
