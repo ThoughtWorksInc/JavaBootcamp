@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="CalculatorTests" tests="6" skipped="0" failures="0" errors="0" timestamp="2020-04-08T13:06:14" hostname="Wills-MacBook-Pro.local" time="0.008">
+  <properties/>
+  <testcase name="calculateAddition" classname="CalculatorTests" time="0.005"/>
+  <testcase name="calculateMultiplication" classname="CalculatorTests" time="0.0"/>
+  <testcase name="testIncorrectOperatorStatus" classname="CalculatorTests" time="0.0"/>
+  <testcase name="calculateDivision" classname="CalculatorTests" time="0.001"/>
+  <testcase name="testArithmeticExceptionStatus" classname="CalculatorTests" time="0.0"/>
+  <testcase name="calculateSubtraction" classname="CalculatorTests" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
