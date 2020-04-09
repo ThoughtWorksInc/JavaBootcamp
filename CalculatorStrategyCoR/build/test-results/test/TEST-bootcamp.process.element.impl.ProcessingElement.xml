@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="bootcamp.process.element.impl.ProcessingElement" tests="4" skipped="0" failures="0" errors="0" timestamp="2020-04-09T12:12:32" hostname="Jamess-MacBook-Pro.local" time="0.001">
+  <properties/>
+  <testcase name="testAdder" classname="bootcamp.process.element.impl.ProcessingElement" time="0.0"/>
+  <testcase name="testSubtractor" classname="bootcamp.process.element.impl.ProcessingElement" time="0.0"/>
+  <testcase name="testMultiplier" classname="bootcamp.process.element.impl.ProcessingElement" time="0.0"/>
+  <testcase name="testDivider" classname="bootcamp.process.element.impl.ProcessingElement" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
