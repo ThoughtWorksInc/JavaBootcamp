@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="bootcamp.CalculatorTests" tests="6" skipped="0" failures="0" errors="0" timestamp="2020-04-09T14:25:02" hostname="Wills-MacBook-Pro.local" time="0.009">
+  <properties/>
+  <testcase name="calculateAddition" classname="bootcamp.CalculatorTests" time="0.006"/>
+  <testcase name="calculateMultiplication" classname="bootcamp.CalculatorTests" time="0.0"/>
+  <testcase name="testIncorrectOperatorStatus" classname="bootcamp.CalculatorTests" time="0.0"/>
+  <testcase name="calculateDivision" classname="bootcamp.CalculatorTests" time="0.001"/>
+  <testcase name="testArithmeticExceptionStatus" classname="bootcamp.CalculatorTests" time="0.0"/>
+  <testcase name="calculateSubtraction" classname="bootcamp.CalculatorTests" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
