@@ -17,7 +17,6 @@ public class AddressDirectoryTests {
 
     private AddressDirectory addressDirectory;
     private List<PersonAddressPair> personAddressPairList;
-    private PersonAddressPair personAddressPair1;
     private PersonAddressPair personAddressPair2;
     private PersonAddressPair personAddressPairUpdate;
     private Person person1;
@@ -31,7 +30,6 @@ public class AddressDirectoryTests {
         person2 = new Person("Bill", "Ensoll");
         address1 = new Address("1", "road", "postcode", "city1");
         address2 = new Address("2", "road", "postcode", "city2");
-        personAddressPair1 = new PersonAddressPair(person1, address1);
         personAddressPair2 = new PersonAddressPair(person2, address2);
         personAddressPairUpdate = new PersonAddressPair(person1, address2);
         personAddressPairList = Arrays.asList(
@@ -39,7 +37,6 @@ public class AddressDirectoryTests {
         );
 
         addressDirectory = new AddressDirectory(personAddressPairList);
-
     }
 
     @Test
