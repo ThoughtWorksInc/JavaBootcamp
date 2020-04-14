@@ -1,5 +1,7 @@
 package bootcamp.data;
 
+import java.util.Objects;
+
 public class Address {
     private final String firstLine;
     private final String secondLine;
@@ -27,5 +29,21 @@ public class Address {
 
     public String getCity() {
         return city;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Address address = (Address) o;
+        return Objects.equals(firstLine, address.firstLine) &&
+                Objects.equals(secondLine, address.secondLine) &&
+                Objects.equals(postCode, address.postCode) &&
+                Objects.equals(city, address.city);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(firstLine, secondLine, postCode, city);
     }
 }
