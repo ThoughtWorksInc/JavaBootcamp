@@ -1,11 +1,20 @@
 package bootcamp.data;
 
 public class Person {
-    private final String firstName = null; //FIXME
-    private final String secondName = null; //FIXME
 
-    //TODO Constructor.
-    //TODO getters.
-    //TODO Fix the compilation error.
+    private final String firstName;
+    private final String secondName;
 
+    public Person(String firstName, String secondName) {
+        this.firstName = firstName;
+        this.secondName = secondName;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getSecondName() {
+        return secondName;
+    }
 }
