@@ -21,6 +21,7 @@ public class AddressDirectoryTests {
     private PersonAddressPair personAddressPairUpdate;
     private Person person1;
     private Person person2;
+    private Person person3;
     private Address address1;
     private Address address2;
 
@@ -28,12 +29,15 @@ public class AddressDirectoryTests {
     public void setUp() {
         person1 = new Person("Will", "Ensoll");
         person2 = new Person("Bill", "Ensoll");
+        person3 = new Person("Dill", "Ensoll");
         address1 = new Address("1", "road", "postcode", "city1");
         address2 = new Address("2", "road", "postcode", "city2");
         personAddressPair2 = new PersonAddressPair(person2, address2);
         personAddressPairUpdate = new PersonAddressPair(person1, address2);
+
         personAddressPairList = Arrays.asList(
-                new PersonAddressPair(person1, address1)
+                new PersonAddressPair(person1, address1),
+                new PersonAddressPair(person3, address1)
         );
 
         addressDirectory = new AddressDirectory(personAddressPairList);
@@ -71,5 +75,15 @@ public class AddressDirectoryTests {
         addressDirectory.remove(person1);
         Optional<Address> result = addressDirectory.getAddress(person1);
         assertThat(result, is(Optional.empty()));
+    }
+
+    @Test
+    public void get_people_by_address_returns_list_of_people_at_address() {
+        List result = addressDirectory.getPeopleByAddress(address1);
+        System.out.println(result);
+        assertThat(result.size(), is(2));
+        assertThat(result.get(0), is(person1));
+        assertThat(result.get(1), is(person3));
+
     }
 }
