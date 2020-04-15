@@ -9,6 +9,7 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 public class HistogramProcessor {
     final HistogramCalculator calculator = new HistogramCalculator();
@@ -22,7 +23,13 @@ public class HistogramProcessor {
 
     public Result<?> process(final WordReader reader, final HistogramWriter writer) throws IOException {
         Result<List<String>> wordsResult = reader.getWords(inputStream);
-        Map<String,Integer> histogramMap = calculator.calculate(wordsResult.getValue().get());
-        return writer.writeHistogram(histogramMap, outputStream);
+        Optional<List<String>> wordsList = wordsResult.getValue();
+        if (wordsList.isPresent()) {
+            List<String> foundWordsList = wordsList.get();
+            Map<String, Integer> histogramMap = calculator.calculate(foundWordsList);
+            return writer.writeHistogram(histogramMap, outputStream);
+        } else {
+            return wordsResult;
+        }
     }
 }
