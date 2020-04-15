@@ -1,12 +1,37 @@
 package bootcamp.data;
 
-public class Person {
-    private final String firstName = null; //FIXME
-    private final String secondName = null; //FIXME
+import java.util.Objects;
 
-    //TODO Constructor.
-    //TODO getters.
-    //TODO Override hashcode.
-    //TODO Override equals.
+public class Person {
+    private final String firstName;
+    private final String secondName;
+
+    public Person(String firstName, String secondName) {
+        this.firstName = firstName;
+        this.secondName = secondName;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getSecondName() {
+        return secondName;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Person person = (Person) o;
+        return firstName.equals(person.firstName) &&
+                secondName.equals(person.secondName);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(firstName, secondName);
+    }
+    
 
 }
