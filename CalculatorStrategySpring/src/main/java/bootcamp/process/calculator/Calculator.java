@@ -3,25 +3,54 @@ package bootcamp.process.calculator;
 import bootcamp.data.Params;
 import bootcamp.data.Result;
 import bootcamp.process.element.ProcessingElement;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
 
-// TODO this is a Component
+import java.math.BigDecimal;
+import java.util.Optional;
+
+@Component
 public class Calculator {
-    private final ProcessingElement adder = null; //FIXME
-    private final ProcessingElement subtractor = null; //FIXME
-    private final ProcessingElement multiplier = null; //FIXME
-    private final ProcessingElement divider = null; //FIXME
+    private final ProcessingElement adder;
+    private final ProcessingElement subtractor;
+    private final ProcessingElement multiplier;
+    private final ProcessingElement divider;
 
-    // TODO Calculator to be autowired to inject ProcessingElements
-    public Calculator(/* TODO Use qualifier to get adder by name */ ProcessingElement adder,
-            /* TODO Use qualifier to get subtractor by name */ ProcessingElement subtractor,
-            /* TODO Use qualifier to get multiplier by name */ ProcessingElement multiplier,
-            /* TODO Use qualifier to get divider by name */ ProcessingElement divider) {
-        // TODO assign and initialise processing elements.
+    @Autowired
+    public Calculator(@Qualifier("adder") ProcessingElement adder,
+            @Qualifier("subtractor") ProcessingElement subtractor,
+            @Qualifier("multiplier") ProcessingElement multiplier,
+            @Qualifier("divider") ProcessingElement divider) {
+        this.adder = adder;
+        this.subtractor = subtractor;
+        this.multiplier = multiplier;
+        this.divider = divider;
     }
 
 
     public Result calculate(final Params params) {
-        // TODO select the processing element using the operator and process the operands.
-        return null;
+        BigDecimal x = params.getX();
+        BigDecimal y = params.getY();
+        ProcessingElement processor;
+
+        switch(params.getOperator()) {
+            case "+":
+                processor = adder;
+                break;
+            case "-":
+                processor = subtractor;
+                break;
+            case "x":
+                processor = multiplier;
+                break;
+            case "/":
+                processor = divider;
+                break;
+            default:
+                throw new IllegalArgumentException("Operator must be one of: +, -, x, /");
+        }
+
+        return new Result(Optional.ofNullable(processor.apply(x, y)));
     }
 }
