@@ -1,11 +1,29 @@
 package bootcamp.data;
 
-public class Person {
-    private final String firstName = null; //FIXME
-    private final String secondName = null; //FIXME
+import java.util.Comparator;
 
-    //TODO Constructor.
-    //TODO getters.
-    //TODO Fix the compilation error.
+public class Person  {
+    private final String firstName;
+    private final String secondName;
 
+    public Person(String firstName, String secondName) {
+        this.firstName = firstName;
+        this.secondName = secondName;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getSecondName() {
+        return secondName;
+    }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "firstName='" + firstName + '\'' +
+                ", secondName='" + secondName + '\'' +
+                '}';
+    }
 }
