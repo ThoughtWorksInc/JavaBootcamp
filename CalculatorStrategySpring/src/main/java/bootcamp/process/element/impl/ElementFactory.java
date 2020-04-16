@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Configuration;
 import java.math.BigDecimal;
 
 @Configuration
-@ComponentScan
+@ComponentScan(basePackages = "bootcamp")
 public class ElementFactory {
     @Bean
     ProcessingElement adder() {
