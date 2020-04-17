@@ -21,7 +21,7 @@ public class AddressDirectory {
     public Result<Residents> getResidents(final Address address) {
         final String addressSql = "SELECT * FROM ADDRESS WHERE LINE_1 = :firstLine AND LINE_2 = :secondLine " +
                 "AND CITY = :city AND POST_CODE = :postCode";
-        final String personSql = "SELECT * FROM PERSON WHERE ADDRESS_ID = addressId";
+        final String personSql = "SELECT * FROM PERSON WHERE ADDRESS_ID = :addressId";
 
         final Map<String, String> addressParams = Map.of(
                 "firstLine", address.getFirstLine(),
