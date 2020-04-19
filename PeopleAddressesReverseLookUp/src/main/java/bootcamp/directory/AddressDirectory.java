@@ -3,13 +3,14 @@ package bootcamp.directory;
 import bootcamp.data.Address;
 import bootcamp.data.Person;
 import bootcamp.data.PersonAddressPair;
+import bootcamp.data.Status;
 
 import java.util.*;
 
 public class AddressDirectory {
 
-    Map<Person, Address> personToAddressDirectory;
-    Map<Address, List<Person>> addressToPersonDirectory;
+    private Map<Person, Address> personToAddressDirectory;
+    private Map<Address, List<Person>> addressToPersonDirectory;
 
     public AddressDirectory(final List<PersonAddressPair> addressList) {
         this.personToAddressDirectory = new HashMap<>();
@@ -43,11 +44,13 @@ public class AddressDirectory {
         return Optional.ofNullable(personToAddressDirectory.get(person));
     }
 
-    public void updateAddress(final PersonAddressPair personAddress) {
+    public Status updateAddress(final PersonAddressPair personAddress) {
         personToAddressDirectory.put(personAddress.getPerson(), personAddress.getAddress());
+        return Status.SUCCESS;
+
     }
 
-    public void updateAddress(final Address oldAddress, final Address newAddress) {
+    public Status updateAddress(final Address oldAddress, final Address newAddress) {
         personToAddressDirectory.forEach((k, v) -> {
             if (v.equals(oldAddress)) {
                 personToAddressDirectory.put(k, newAddress);
@@ -55,14 +58,29 @@ public class AddressDirectory {
         });
 
         addressToPersonDirectory.put(newAddress, addressToPersonDirectory.remove(oldAddress));
+
+        return Status.SUCCESS;
     }
 
-    public void remove(final Person person) {
-        personToAddressDirectory.remove(person);
+    public Status remove(final Person person) {
+        if (personToAddressDirectory.containsKey(person)) {
+            personToAddressDirectory.remove(person);
+            return Status.SUCCESS;
+        } else {
+            return Status.KEY_NOT_FOUND;
+        }
+    }
+
+    public Status remove(final Address address) {
+        if (personToAddressDirectory.entrySet().removeIf(person -> person.getValue().equals(address))) {
+            addressToPersonDirectory.remove(address);
+            return Status.SUCCESS;
+        } else {
+            return Status.KEY_NOT_FOUND;
+        }
     }
 
     public List<PersonAddressPair> getPeopleByAddress(Address address) {
         return addressToPersonDirectory.getOrDefault(address, Collections.EMPTY_LIST);
     }
-
 }

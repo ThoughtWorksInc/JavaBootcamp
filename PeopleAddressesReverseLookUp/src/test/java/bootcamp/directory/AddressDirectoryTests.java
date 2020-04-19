@@ -3,6 +3,7 @@ package bootcamp.directory;
 import bootcamp.data.Address;
 import bootcamp.data.Person;
 import bootcamp.data.PersonAddressPair;
+import bootcamp.data.Status;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -58,24 +59,33 @@ public class AddressDirectoryTests {
 
     @Test
     public void updateAddress_updates_persons_address_when_found_in_dictionary() {
-        addressDirectory.updateAddress(personAddressPairUpdate);
+        Status status = addressDirectory.updateAddress(personAddressPairUpdate);
         Optional<Address> result = addressDirectory.getAddress(person1);
         assertThat(result.get(), is(address2));
+        assertThat(status, is(Status.SUCCESS));
     }
 
     @Test
     public void updateAddress_adds_persons_address_when_missing_in_dictionary() {
         assertThat(addressDirectory.getAddress(person2), is(Optional.empty()));
-        addressDirectory.updateAddress(personAddressPair2);
+        Status status = addressDirectory.updateAddress(personAddressPair2);
         Optional<Address> result = addressDirectory.getAddress(person2);
         assertThat(result.get(), is(address2));
+        assertThat(status, is(Status.SUCCESS));
     }
 
     @Test
     public void remove_deletes_person_from_dictionary() {
-        addressDirectory.remove(person1);
+        Status status = addressDirectory.remove(person1);
         Optional<Address> result = addressDirectory.getAddress(person1);
         assertThat(result, is(Optional.empty()));
+        assertThat(status, is(Status.SUCCESS));
+    }
+
+    @Test
+    public void remove_returns_key_not_found_if_not_in_dictionary() {
+        Status status = addressDirectory.remove(person2);
+        assertThat(status, is(Status.KEY_NOT_FOUND));
     }
 
     @Test
@@ -89,21 +99,51 @@ public class AddressDirectoryTests {
     }
 
     @Test
-    public void updateAddress_updates_personAddressPair_when_found_in_dictionary_by_address() {
-        addressDirectory.updateAddress(address1, address2);
+    public void updateAddress_updates_personToAddressPair_when_found_in_dictionary_by_person() {
+        Status status = addressDirectory.updateAddress(address1, address2);
         Optional<Address> result = addressDirectory.getAddress(person1);
         Optional<Address> result2 = addressDirectory.getAddress(person3);
         assertThat(result.get(), is(address2));
         assertThat(result2.get(), is(address2));
+        assertThat(status, is(Status.SUCCESS));
     }
 
     @Test
-    public void addressToPersonPair_when_found_in_dictionary_by_address() {
-        addressDirectory.updateAddress(address1, address2);
+    public void updateAddress_updates_addressToPersonPair_when_found_in_dictionary_by_address() {
+        Status status = addressDirectory.updateAddress(address1, address2);
         List<PersonAddressPair> result = addressDirectory.getPeopleByAddress(address2);
         List<PersonAddressPair> result2 = addressDirectory.getPeopleByAddress(address1);
 
         assertThat(result.size(), is(2));
+        assertThat(result.get(0), is(person1));
+        assertThat(result.get(1), is(person3));
         assertThat(result2, is(Collections.EMPTY_LIST));
+        assertThat(status, is(Status.SUCCESS));
     }
+
+    @Test
+    public void removeAddress_removes_people_associated_withAddress_from_personToAddress() {
+        Status status = addressDirectory.remove(address1);
+        Optional<Address> result = addressDirectory.getAddress(person1);
+        Optional<Address> result2 = addressDirectory.getAddress(person3);
+        assertThat(result, is(Optional.empty()));
+        assertThat(result2, is(Optional.empty()));
+        assertThat(status, is(Status.SUCCESS));
+    }
+
+    @Test
+    public void removeAddress_removes_people_associated_withAddress_from_addressToPerson() {
+        Status status = addressDirectory.remove(address1);
+        List<PersonAddressPair> result = addressDirectory.getPeopleByAddress(address1);
+        assertThat(result, is(Collections.EMPTY_LIST));
+        assertThat(status, is(Status.SUCCESS));
+
+    }
+
+    @Test
+    public void removeAddress_returns_key_not_found_if_no_address_found() {
+        Status status = addressDirectory.remove(address2);
+        assertThat(status, is(Status.KEY_NOT_FOUND));
+    }
+
 }
