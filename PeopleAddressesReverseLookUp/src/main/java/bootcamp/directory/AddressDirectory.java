@@ -17,23 +17,27 @@ public class AddressDirectory {
 
         for (PersonAddressPair pair : addressList) {
 
-            personToAddressDirectory.put(pair.getPerson(),
-                    pair.getAddress());
+            setAddressToPersonDirectory(pair);
+            setPersonToAddressDirectory(pair);
 
-
-            addressToPersonDirectory.computeIfPresent(pair.getAddress(), (k, v) -> {
-                v.add(pair.getPerson());
-                return v;
-            });
-
-            addressToPersonDirectory.computeIfAbsent(pair.getAddress(), k ->
-                    new ArrayList<Person>() {{
-                        add(pair.getPerson());
-                    }});
         }
-
     }
 
+    public void setPersonToAddressDirectory(PersonAddressPair pair) {
+        personToAddressDirectory.put(pair.getPerson(),
+                pair.getAddress());
+    }
+
+    public void setAddressToPersonDirectory(PersonAddressPair pair) {
+        addressToPersonDirectory.computeIfPresent(pair.getAddress(), (k, v) -> {
+            v.add(pair.getPerson());
+            return v;
+        });
+        addressToPersonDirectory.computeIfAbsent(pair.getAddress(), k ->
+                new ArrayList<Person>() {{
+                    add(pair.getPerson());
+                }});
+    }
 
     public Optional<Address> getAddress(final Person person) {
         return Optional.ofNullable(personToAddressDirectory.get(person));
@@ -43,6 +47,16 @@ public class AddressDirectory {
         personToAddressDirectory.put(personAddress.getPerson(), personAddress.getAddress());
     }
 
+    public void updateAddress(final Address oldAddress, final Address newAddress) {
+        personToAddressDirectory.forEach((k, v) -> {
+            if (v.equals(oldAddress)) {
+                personToAddressDirectory.put(k, newAddress);
+            }
+        });
+
+        addressToPersonDirectory.put(newAddress, addressToPersonDirectory.remove(oldAddress));
+    }
+
     public void remove(final Person person) {
         personToAddressDirectory.remove(person);
     }
@@ -50,6 +64,5 @@ public class AddressDirectory {
     public List<PersonAddressPair> getPeopleByAddress(Address address) {
         return addressToPersonDirectory.getOrDefault(address, Collections.EMPTY_LIST);
     }
-
 
 }

@@ -7,6 +7,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
@@ -85,5 +86,24 @@ public class AddressDirectoryTests {
         assertThat(result.get(0), is(person1));
         assertThat(result.get(1), is(person3));
 
+    }
+
+    @Test
+    public void updateAddress_updates_personAddressPair_when_found_in_dictionary_by_address() {
+        addressDirectory.updateAddress(address1, address2);
+        Optional<Address> result = addressDirectory.getAddress(person1);
+        Optional<Address> result2 = addressDirectory.getAddress(person3);
+        assertThat(result.get(), is(address2));
+        assertThat(result2.get(), is(address2));
+    }
+
+    @Test
+    public void addressToPersonPair_when_found_in_dictionary_by_address() {
+        addressDirectory.updateAddress(address1, address2);
+        List<PersonAddressPair> result = addressDirectory.getPeopleByAddress(address2);
+        List<PersonAddressPair> result2 = addressDirectory.getPeopleByAddress(address1);
+
+        assertThat(result.size(), is(2));
+        assertThat(result2, is(Collections.EMPTY_LIST));
     }
 }
