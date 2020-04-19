@@ -63,8 +63,7 @@ public class AddressDirectory {
     }
 
     public Status remove(final Person person) {
-        if (personToAddressDirectory.containsKey(person)) {
-            personToAddressDirectory.remove(person);
+        if (personToAddressDirectory.entrySet().removeIf(personObj -> personObj.getKey().equals(person))) {
             return Status.SUCCESS;
         } else {
             return Status.KEY_NOT_FOUND;
