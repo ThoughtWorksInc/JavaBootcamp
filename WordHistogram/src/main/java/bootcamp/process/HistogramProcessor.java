@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Map;
 
 public class HistogramProcessor {
-    final HistogramCalculator calculator = new HistogramCalculator();
+    final HistogramCalculator calculator;
     private InputStream inputStream;
     private OutputStream outputStream;
 
@@ -18,12 +18,13 @@ public class HistogramProcessor {
     public HistogramProcessor(InputStream inputStream, OutputStream outputStream) {
     this.inputStream = inputStream;
     this.outputStream = outputStream;
+    calculator = new HistogramCalculator();
     }
 
     public Result<?> process(final WordReader wordReader, final HistogramWriter writer) {
         Result<List<String>> words = wordReader.getWords(inputStream);
         Map<String, Integer> histogramMap = calculator.calculate(words.getValue().get());
-        writer.writeHistogram(histogramMap);
+        writer.writeHistogram(histogramMap, outputStream);
         return new Result();
     }
 }

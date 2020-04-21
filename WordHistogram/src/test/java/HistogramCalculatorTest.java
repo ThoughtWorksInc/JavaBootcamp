@@ -18,7 +18,6 @@ public class HistogramCalculatorTest {
     public void setUp() {
         testList = Arrays.asList("test", "test", "test", "123");
         testCalculator = new HistogramCalculator();
-
     }
 
     @Test
