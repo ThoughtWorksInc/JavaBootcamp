@@ -21,9 +21,11 @@ public class HistogramApp {
             Result result = histogramProcessor.process(wordReader, histogramWriter);
             System.out.println(result.getMessage());
         } catch (FileNotFoundException e) {
-            e.printStackTrace();
+            System.out.println(
+                    "File input not found"
+            );
         } catch (ArrayIndexOutOfBoundsException e) {
-            e.printStackTrace();
+            System.out.println("Please supply input and output file paths");
         } catch (IOException e) {
             e.printStackTrace();
         }
