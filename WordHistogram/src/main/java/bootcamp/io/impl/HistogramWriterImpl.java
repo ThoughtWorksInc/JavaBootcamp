@@ -1,6 +1,7 @@
 package bootcamp.io.impl;
 
 import bootcamp.data.Result;
+import bootcamp.data.Status;
 import bootcamp.io.HistogramWriter;
 
 import java.io.*;
@@ -12,9 +13,8 @@ public class HistogramWriterImpl implements HistogramWriter {
         try (BufferedWriter bos = new BufferedWriter(new OutputStreamWriter(output))) {
             bos.write(histogram.toString());
         } catch (IOException e) {
-            e.printStackTrace();
+            return new Result(Status.IO_ERROR, e.getMessage());
         }
-
         return new Result();
     }
 }

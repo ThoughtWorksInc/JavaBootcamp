@@ -1,13 +1,11 @@
 package bootcamp.app;
 
+import bootcamp.data.Result;
 import bootcamp.io.impl.HistogramWriterImpl;
 import bootcamp.io.impl.WordReaderImpl;
 import bootcamp.process.HistogramProcessor;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
+import java.io.*;
 
 public class HistogramApp {
     public static void main(final String[] args) {
@@ -20,9 +18,11 @@ public class HistogramApp {
 
             WordReaderImpl wordReader = new WordReaderImpl();
             HistogramWriterImpl histogramWriter = new HistogramWriterImpl();
-            histogramProcessor.process(wordReader, histogramWriter);
-
+            Result result = histogramProcessor.process(wordReader, histogramWriter);
+            System.out.println(result.getMessage());
         } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (ArrayIndexOutOfBoundsException e) {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
