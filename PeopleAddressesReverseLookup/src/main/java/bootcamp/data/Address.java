@@ -42,4 +42,8 @@ public class Address {
                 Objects.equals(city, address.city);
     }
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(firstLine, secondLine, postCode, city);
+    }
 }

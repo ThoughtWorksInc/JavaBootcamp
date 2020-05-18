@@ -3,8 +3,10 @@ package bootcamp.directory;
 import bootcamp.data.Address;
 import bootcamp.data.Person;
 import bootcamp.data.PersonAddressPair;
+import bootcamp.data.Status;
 
 import java.util.*;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 public class AddressDirectory {
     private final Map<Person, Address> directory;
@@ -33,11 +35,54 @@ public class AddressDirectory {
         return Optional.of(address);
     }
 
-    public void updateAddress(final PersonAddressPair personAddress) {
-        this.directory.put(personAddress.getPerson(), personAddress.getAddress());
+    public ArrayList<Person> getPeople(Address searchAddress) {
+        ArrayList<Person> results = new ArrayList<Person>();
+        this.directory.forEach((person, address) -> {
+            if (address.equals(searchAddress)) {
+                results.add(person);
+            }
+        });
+        return results;
     }
 
-    public void remove(final Person person) {
-        this.directory.remove(person);
+    public Enum updateAddress(PersonAddressPair personAddress) {
+        if (this.directory.containsKey(personAddress.getPerson())) {
+            this.directory.put(personAddress.getPerson(), personAddress.getAddress());
+            return Status.SUCCESS;
+        }
+        else return Status.KEY_NOT_FOUND;
+    }
+
+    public Enum updateAddress(Address oldAddress, Address newAddress) {
+        AtomicBoolean changed = new AtomicBoolean(false);
+        this.directory.forEach(((person, address) -> {
+            if (address.equals(oldAddress)) {
+                this.directory.put(person, newAddress);
+                changed.set(true);
+            }
+        }));
+        if (changed.get()) {
+            return Status.SUCCESS;
+        }
+        else return Status.KEY_NOT_FOUND;
+    }
+
+    public Enum remove(final Person person) {
+        if (this.directory.containsKey(person)) {
+            this.directory.remove(person);
+            return Status.SUCCESS;
+        }
+        return Status.KEY_NOT_FOUND;
+    }
+
+    public Enum remove(final Address address) {
+        ArrayList<Person> results = getPeople(address);
+        if (results.size() == 0) {
+            return Status.KEY_NOT_FOUND;
+        }
+        results.forEach(person -> {
+            this.directory.remove(person);
+        });
+        return Status.SUCCESS;
     }
 }
