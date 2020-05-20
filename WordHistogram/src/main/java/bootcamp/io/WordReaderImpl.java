@@ -11,7 +11,6 @@ import java.util.Optional;
 
 public class WordReaderImpl implements WordReader {
 
-    List<String> words;
 
     @Override
     public Result<List<String>> getWords(InputStream inStream) throws IOException {
@@ -31,12 +30,9 @@ public class WordReaderImpl implements WordReader {
             }
             nextChar = inStream.read();
         }
+        words.add(currentWord);
         Result<List<String>> result = new Result<List<String>>(Optional.of(words));
-        this.words = words;
         return result;
     }
 
-    public List<String> getWords() {
-        return words;
-    }
 }

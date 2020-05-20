@@ -21,7 +21,10 @@ public class HistogramApp {
         HistogramWriterImpl writer = new HistogramWriterImpl();
 
         //TODO create the HistogramProcessor object and run it to create and save the histogram in a file.
-        HistogramProcessor processor = new HistogramProcessor(inputFile, outputFile);
+
+        InputStream inputStream = new FileInputStream(inputFile);
+        OutputStream outputStream = new FileOutputStream(outputFile);
+        HistogramProcessor processor = new HistogramProcessor(inputStream, outputStream);
         processor.process(reader, writer);
 
 
