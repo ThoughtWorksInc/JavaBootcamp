@@ -9,10 +9,10 @@ import java.math.BigDecimal;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
-public class ProcessorTests {
+public class ProcessorTest {
 
     @Test
-    public void testProcess() {
+    public void shouldProcessResultsCorrectlyWithValidParams() {
         final Params params = new Params(new BigDecimal(5), new BigDecimal(2));
         Processor processor = new Processor();
 
@@ -26,7 +26,7 @@ public class ProcessorTests {
     }
 
     @Test
-    public void testProcessWithXZero() {
+    public void shouldProcessResultsCorrectlyWhenXParamIsZero() {
         final Params params = new Params(new BigDecimal(0), new BigDecimal(2));
         Processor processor = new Processor();
 
@@ -40,7 +40,7 @@ public class ProcessorTests {
     }
 
     @Test(expected = ArithmeticException.class)
-    public void testProcessWithYZero() {
+    public void shouldGetExceptionWhenProcessingWithZeroAsYParam() {
         final Params params = new Params(new BigDecimal(2), new BigDecimal(0));
         Processor processor = new Processor();
 

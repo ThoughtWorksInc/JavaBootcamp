@@ -3,25 +3,25 @@ package bootcamp.process;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-public class ProcessTests {
+public class ProcessorTest {
 
     @Test
-    public void testGetSummary() {
+    public void shouldGetSummaryWithCorrectValuesWhenProcessingValidArray() {
         fail("Not Implemented");
     }
 
     @Test
-    public void testGetSummaryEmptyArray() {
+    public void shouldGetDefaultSummaryWhenProcessingEmptyArray() {
         fail("Not Implemented");
     }
 
     @Test
-    public void testGetValue() {
+    public void shouldReturnValueAtGivenArrayIndex() {
         fail("Not Implemented");
     }
 
     @Test(expected = ArrayIndexOutOfBoundsException.class)
-    public void testGetValueOutOfArrayBounds() {
+    public void shouldGetExceptionFromGetValueWhenIndexTooLarge() {
         fail("Not Implemented");
     }
 }
