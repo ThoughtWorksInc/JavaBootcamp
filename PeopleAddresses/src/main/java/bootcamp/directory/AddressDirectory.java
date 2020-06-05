@@ -42,6 +42,6 @@ public class AddressDirectory {
     }
 
     public void remove(final Person person) {
-        //FIXME
+        directory.remove(person);
     }
 }

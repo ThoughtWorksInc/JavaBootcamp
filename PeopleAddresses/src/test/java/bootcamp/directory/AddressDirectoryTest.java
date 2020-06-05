@@ -23,7 +23,6 @@ public class AddressDirectoryTest {
     private static final Address ADDRESS_1 = new Address("A house", "A road", "A postcode", "A city");
     private static final Address ADDRESS_2=  new Address("A different house", "A different road", "A different postcode", "A different city");
 
-    private static final PersonAddressPair PERSON_NEW_ADDRESS_PAIR = new PersonAddressPair(PERSON_1, ADDRESS_2);
 // so that it can be used in @Before but isn't then out of scope in the tests
     private AddressDirectory addressDirectory;
 
@@ -43,34 +42,43 @@ public class AddressDirectoryTest {
     @Test
     public void shouldGetAddressWhenPersonExists() {
         Optional<Address> actual = addressDirectory.getAddress(PERSON_1);
-        assertEquals(Optional.of(ADDRESS_1), actual);
+        assertEquals(actual, Optional.of(ADDRESS_1));
 
     }
 
     @Test
     public void shouldGetAddressWhenSecondPersonExists() {
         Optional<Address> actual = addressDirectory.getAddress(PERSON_2);
-        assertEquals(Optional.of(ADDRESS_2), actual);
+        assertEquals(actual, Optional.of(ADDRESS_2));
     }
 
     @Test
     public void shouldReturnOptionalOfAddressWhenPersonDoesNotExist() {
         Optional<Address> actual = addressDirectory.getAddress(PERSON_3);
-        assertEquals(Optional.empty(), actual);
+        assertEquals(actual, Optional.empty());
     }
 
     @Test
     public void shouldUpdateAddressWhenPersonExists() {
+        PersonAddressPair PERSON_NEW_ADDRESS_PAIR = new PersonAddressPair(PERSON_1, ADDRESS_2);
         addressDirectory.updateAddress(PERSON_NEW_ADDRESS_PAIR);
         Optional<Address> actual = addressDirectory.getAddress(PERSON_1);
         assertEquals(Optional.of(ADDRESS_2), actual);
-        assertNotEquals(Optional.of(ADDRESS_1), actual);
+        assertNotEquals(actual, Optional.of(ADDRESS_1));
+    }
+
+    @Test
+    public void shouldUpdateAddressWhenPersonDoesNotExist() {
+        PersonAddressPair NEW_PERSON_NEW_ADDRESS_PAIR = new PersonAddressPair(PERSON_3, ADDRESS_2);
+        addressDirectory.updateAddress(NEW_PERSON_NEW_ADDRESS_PAIR);
+        Optional<Address> actual = addressDirectory.getAddress(PERSON_3);
+        assertEquals(actual, Optional.of(ADDRESS_2));
+    }
+
+    @Test
+    public void shouldRemoveAPersonsAddressFromTheDirectory() {
+        addressDirectory.remove(PERSON_1);
+        Optional<Address> actual = addressDirectory.getAddress(PERSON_1);
+        assertEquals(actual, Optional.empty());
     }
 }
-
-
-//Get a person’s address when that person exists in the directory,
-//Get a person’s address when that person does not exist in the directory,
-//Update a person’s address when that person exists in the directory,
-//Update a person’s address when that person does not exist in the directory (Upsert),
-//Remove a person’s address from the directory.
