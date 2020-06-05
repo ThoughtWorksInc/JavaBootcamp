@@ -29,4 +29,3 @@ public class AdditionElementTest {
         assertEquals(BigDecimal.valueOf(6), result);
     }
 
-}

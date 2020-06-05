@@ -1,6 +1,9 @@
 package bootcamp.data;
 
+import java.util.Objects;
+
 public class Person {
+
     private final String firstName;
     private final String secondName;
 
@@ -14,22 +17,26 @@ public class Person {
     }
 
     public String getSecondName() {
-        return  secondName;
+        return secondName;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Person person = (Person) o;
+        return Objects.equals(firstName, person.firstName) &&
+                Objects.equals(secondName, person.secondName);
     }
 
     @Override
     public int hashCode() {
-        return super.hashCode();
+        return Objects.hash(firstName, secondName);
     }
 
-    @Override
-    public boolean equals(Object obj) {
-        return super.equals(obj);
-    }
 
 //TODO Constructor.
     //TODO getters.
     //TODO Override hashcode.
     //TODO Override equals.
-
 }
