@@ -2,7 +2,8 @@ package bootcamp.process.element;
 
 import java.math.BigDecimal;
 
-public interface ProcessingElement {
+import bootcamp.data.Result;
 
-    BigDecimal process(final BigDecimal x, final BigDecimal y);
+public interface ProcessingElement {
+    Result process(final BigDecimal x, final BigDecimal y);
 }
