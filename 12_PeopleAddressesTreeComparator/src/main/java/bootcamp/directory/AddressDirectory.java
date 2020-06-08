@@ -1,31 +1,34 @@
 package bootcamp.directory;
 
+import java.util.*;
+
 import bootcamp.data.Address;
 import bootcamp.data.Person;
 import bootcamp.data.PersonAddressPair;
 
-import java.util.*;
-
 public class AddressDirectory {
-    private final Map<Person, Address> directory;
+    private final Map<Person, Address> addressBook;
 
     public AddressDirectory(final List<PersonAddressPair> addressList) {
-        directory = new TreeMap<>(new Comparator<Person>() {
-            //FIXME
+        addressBook = new TreeMap<>((personA, personB) -> personA.hashCode() - personB.hashCode());
+        addressList.forEach(personAndAddressPair -> {
+            if (!addressBook.containsKey(personAndAddressPair.person)) {
+                addressBook.put(personAndAddressPair.person, personAndAddressPair.address);
+            }
         });
-        //TODO convert addressList to a TreeMap assigned to directory.
     }
 
     public Optional<Address> getAddress(final Person person) {
-        //FIXME
-        return null;
+        return addressBook.containsKey(person) ? Optional.of(addressBook.get(person)) : Optional.empty();
     }
 
     public void updateAddress(final PersonAddressPair personAddress) {
-        //FIXME
+        addressBook.put(personAddress.person, personAddress.address);
     }
 
     public void remove(final Person person) {
-        //FIXME
+        if (addressBook.containsKey((person))) {
+            addressBook.remove(person);
+        }
     }
 }
