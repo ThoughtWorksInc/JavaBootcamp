@@ -4,10 +4,13 @@ import java.math.BigDecimal;
 import java.util.Optional;
 
 public class Result {
-    private final Status status = null; //FIXME
-    private final String statusMessage = null; //FIXME
-    private final Optional<BigDecimal> value = null; //FIXME
+    public final Status status;
+    public final String statusMessage;
+    public final Optional<BigDecimal> value;
 
-    //TODO Constructor. If there was an error in processing, set the relevant status, message and value to empty Optional.
-    //TODO Getters
+    public Result(final Optional<BigDecimal> value, final Status status, final String statusMessage) {
+        this.status = status;
+        this.statusMessage = statusMessage;
+        this.value = value;
+    }
 }

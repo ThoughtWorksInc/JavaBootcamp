@@ -5,12 +5,14 @@ import bootcamp.data.Result;
 import bootcamp.process.element.ElementFactory;
 
 public class Calculator {
-    private final ElementFactory factory = null; //FIXME
+    private ElementFactory factory;
 
-    //TODO Constructor that instantiates and initialises factory.
+    public Calculator() {
+        factory = new ElementFactory();
+    }
 
     public Result calculate(final Params params) {
-        //FIXME using the factory and implementations of ProcessingElement
-        return null;
+        final var processingElement = factory.create(params.operator);
+        return processingElement.process(params.x, params.y);
     }
 }
