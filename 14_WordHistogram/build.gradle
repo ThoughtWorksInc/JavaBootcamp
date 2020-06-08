@@ -12,5 +12,15 @@ repositories {
 }
 
 dependencies {
-    testCompile group: 'junit', name: 'junit', version: '4.12'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.0'
+    testImplementation 'org.hamcrest:hamcrest:2.2'
+    testImplementation 'org.mockito:mockito-core:3.3.3'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.6.0'
+
+    // not needed unless using mockito annotations like @Mock, @Spy, etc. 
+    // testImplementation 'org.mockito:mockito-junit-jupiter:3.3.3'
+}
+
+test {
+    useJUnitPlatform()
 }

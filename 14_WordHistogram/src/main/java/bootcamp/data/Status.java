@@ -1,5 +1,5 @@
 package bootcamp.data;
 
 public enum Status {
-    //TODO Success, IO Error etc.
+    SUCCESS, IO_ERROR, READ_ERROR, WRITE_ERROR;
 }
