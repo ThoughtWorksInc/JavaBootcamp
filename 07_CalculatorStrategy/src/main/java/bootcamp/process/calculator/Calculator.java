@@ -3,15 +3,17 @@ package bootcamp.process.calculator;
 import bootcamp.data.Params;
 import bootcamp.data.Result;
 import bootcamp.process.element.ElementFactory;
-
+import bootcamp.process.element.impl.ElementFactoryImpl;
 
 public class Calculator {
-    private final ElementFactory factory = null; //FIXME
+    private final ElementFactory factory;
 
-    //TODO Constructor to initialise factory.
+    public Calculator() {
+        factory = new ElementFactoryImpl();
+    }
 
     public Result calculate(final Params params) {
-        //FIXME using the factory and implementations of ProcessingElement
-        return null;
+        var processingElement = factory.create(params.operator);
+        return processingElement.process(params.x, params.y);
     }
 }
