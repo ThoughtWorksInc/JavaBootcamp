@@ -15,7 +15,7 @@ import static org.junit.Assert.*;
 public class AddressDirectoryTest {
 
     //    static so the variable is created on the class not on instances
-//    Creating constants for ease
+    //    Creating constants for ease
     private static final Person PERSON_1 = new Person("Olivia", "Frost");
     private static final Person PERSON_2 = new Person("Will", "Powell");
     private static final Person PERSON_3 = new Person("Santa", "Claus");

@@ -34,9 +34,4 @@ public class Person {
         return Objects.hash(firstName, secondName);
     }
 
-
-//TODO Constructor.
-    //TODO getters.
-    //TODO Override hashcode.
-    //TODO Override equals.
 }
