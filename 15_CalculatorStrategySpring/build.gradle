@@ -1,5 +1,10 @@
 plugins {
-    id 'java'
+    id 'application'
+}
+apply plugin : 'java'
+
+application {
+    mainClassName = 'bootcamp.app.CalculatorApp'
 }
 
 group 'org.example'
@@ -12,5 +17,9 @@ repositories {
 }
 
 dependencies {
+    compile 'org.springframework:spring-core:4.3.0.RELEASE'
+    compile 'org.springframework:spring-beans:4.3.0.RELEASE'
+    compile 'org.springframework:spring-context:4.3.0.RELEASE'
     testCompile group: 'junit', name: 'junit', version: '4.12'
+    testImplementation 'org.hamcrest:hamcrest:2.2'
 }
