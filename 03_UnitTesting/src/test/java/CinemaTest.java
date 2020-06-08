@@ -5,39 +5,52 @@ import static org.junit.Assert.*;
 public class CinemaTest {
     @Test
     public void shouldBeAbleToBuyCinemaTicketWhenOlderThanRestriction() {
-        //given
         int age = 19;
         Customer customer = new Customer(age);
         Movie movie = new Movie("Frozen 2", 12);
         Cinema cinema = new Cinema();
-        //when
+
         boolean canGetTicket = cinema.canBuyTicket(movie, customer);
-        //then
+
         assertTrue(canGetTicket);
     }
 
     @Test
     public void shouldNotBeAbleToBuyCinemaTicketWhenYoungerThanRestriction() {
-        fail("not implemented");
+        int age = 9;
+        Customer customer = new Customer(age);
+        Movie movie = new Movie("Frozen xxx", 18);
+        Cinema cinema = new Cinema();
+
+        boolean canGetTicket = cinema.canBuyTicket(movie, customer);
+
+        assertFalse(canGetTicket);
+    }
+
+    @Test(expected = RuntimeException.class)
+    public void shouldThrowExceptionWhenTryOrderTicketAndYoungerThanAgeRestriction() throws IllegalTicketPurchaseException {
+        int age = 6;
+        String title = "Frozen xxx";
+        int seat = 42;
+        Customer customer = new Customer(age);
+        Movie movie = new Movie(title, 18);
+        Cinema cinema = new Cinema();
+
+        Ticket ticket = cinema.orderTicket(movie, customer, seat);
     }
 
     @Test
-    public void shouldThrowExceptionWhenTryOrderTicketAndYoungerThanAgeRestriction() {
-        fail("not implemented");
-    }
+    public void shouldGetTicketForTheRightSeatAndMovie() throws IllegalTicketPurchaseException {
 
-    @Test
-    public void shouldGetTicketForTheRightSeatAndMovie() {
-        //given
         int age = 19;
         String title = "Frozen 2";
         int seat = 42;
         Customer customer = new Customer(age);
         Movie movie = new Movie(title, 12);
         Cinema cinema = new Cinema();
-        //when
+
         Ticket ticket = cinema.orderTicket(movie, customer, seat);
-        //then
+
         assertEquals(new Ticket(title, seat), ticket);
     }
 }
