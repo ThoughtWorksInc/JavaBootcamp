@@ -1,11 +1,48 @@
 package bootcamp.data;
 
+import java.lang.Comparable;
+
 public class Person implements Comparable<Person> {
-    private final String firstName = null; //FIXME
-    private final String secondName = null; //FIXME
+    public final String firstName;
+    public final String secondName;
 
-    //TODO Constructor.
-    //TODO getters.
-    //TODO Fix the compilation error.
+    public Person(final String firstName, final String secondName) {
+        this.firstName = firstName;
+        this.secondName = secondName;
+    }
 
+    public int compareTo(Person referencePerson) {
+        return hashCode() - referencePerson.hashCode();
+    }
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + ((firstName == null) ? 0 : firstName.hashCode());
+        result = prime * result + ((secondName == null) ? 0 : secondName.hashCode());
+        return result;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        Person other = (Person) obj;
+        if (firstName == null) {
+            if (other.firstName != null)
+                return false;
+        } else if (!firstName.equals(other.firstName))
+            return false;
+        if (secondName == null) {
+            if (other.secondName != null)
+                return false;
+        } else if (!secondName.equals(other.secondName))
+            return false;
+        return true;
+    }
 }
