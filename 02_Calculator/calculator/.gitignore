@@ -1,0 +1,12 @@
+.DS_Store
+.project
+.settings/
+.classpath
+
+### Java ###
+*.class
+
+### Gradle ###
+.gradle
+/build/
+
