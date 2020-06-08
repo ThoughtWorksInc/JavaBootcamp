@@ -1,10 +1,19 @@
 package bootcamp.data;
 
 public class Person {
-    private final String firstName = null; //FIXME
-    private final String lastName = null; //FIXME
+    public final String firstName;
+    public final String lastName;
 
-    //TODO Constructor
-    //TODO getters
-    //TODO override equals
+    public Person(String firstName, String lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+
+    public boolean isSamePerson(Person personToCompare) {
+        if (personToCompare == null) {
+            return false;
+        }
+
+        return personToCompare.firstName.equals(firstName) && personToCompare.lastName.equals(lastName);
+    }
 }

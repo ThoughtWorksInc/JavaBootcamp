@@ -1,9 +1,11 @@
 package bootcamp.data;
 
 public class Location {
-    private final int x = Integer.MIN_VALUE; //FIXME
-    private final int y = Integer.MIN_VALUE; //FIXME
+    public final int x;
+    public final int y;
 
-    //TODO Constructor
-    //TODO getters
+    public Location(final int x, final int y) {
+        this.x = x;
+        this.y = y;
+    }
 }
