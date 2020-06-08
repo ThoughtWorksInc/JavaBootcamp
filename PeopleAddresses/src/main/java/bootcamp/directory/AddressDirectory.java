@@ -9,6 +9,7 @@ import java.util.stream.Collectors;
 
 public class AddressDirectory {
     private final Map<Person, Address> directory;
+//    private final Map<Person, Address> directory = new Map<>()
 
 //    List here can be an ArrayList or LinkedList etc, it's not specified here
     public AddressDirectory(final List<PersonAddressPair> addressList) {
