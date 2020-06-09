@@ -18,12 +18,22 @@ public class CinemaTest {
 
     @Test
     public void shouldNotBeAbleToBuyCinemaTicketWhenYoungerThanRestriction() {
-        fail("not implemented");
+        int age = 42;
+        Customer customer = new Customer(age);
+        Movie movie = new Movie("Grumpy Old Men", 50);
+        Cinema cinema = new Cinema();
+        boolean canGetTicket = cinema.canBuyTicket(movie, customer);
+        assertFalse(canGetTicket);
     }
 
-    @Test
+    @Test(expected = RuntimeException.class)
     public void shouldThrowExceptionWhenTryOrderTicketAndYoungerThanAgeRestriction() {
-        fail("not implemented");
+        int age = 17;
+        int seat = 1;
+        Customer customer = new Customer(age);
+        Movie movie = new Movie("Breakin 2: Electric Boogaloo", 18);
+        Cinema cinema = new Cinema();
+        Ticket ticket = cinema.orderTicket(movie, customer, seat);
     }
 
     @Test
