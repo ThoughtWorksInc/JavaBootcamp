@@ -3,23 +3,28 @@ package bootcamp.data;
 import java.math.BigDecimal;
 
 public class Params {
-    private final BigDecimal x = null;
-    private final BigDecimal y = null;
-    private final String operator = null;
+    private final BigDecimal x;
+    private final BigDecimal y;
+    private final String operator;
 
     public Params(final BigDecimal x, final BigDecimal y, final String operator) {
-
+        this.x = x;
+        this.y = y;
+        this.operator = operator;
     }
 
     public BigDecimal getX() {
-        return null;
+
+        return x;
     }
 
     public BigDecimal getY() {
-        return null;
+
+        return y;
     }
 
     public String getOperator() {
-        return null;
+
+        return operator;
     }
 }

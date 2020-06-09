@@ -6,24 +6,36 @@ package bootcamp.kata.data;
 import java.math.BigDecimal;
 
 public class Results {
-    private final BigDecimal sum = new BigDecimal(0); // TODO use constructor initialisation
-    private final BigDecimal difference = new BigDecimal(0); // TODO use constructor initialisation
-    private final BigDecimal product = new BigDecimal(0); // TODO use constructor initialisation
-    private final BigDecimal quotient = new BigDecimal(0); // TODO use constructor initialisation
+    private final BigDecimal sum; // TODO use constructor initialisation
+    private final BigDecimal difference; // TODO use constructor initialisation
+    private final BigDecimal product; // TODO use constructor initialisation
+    private final BigDecimal quotient; // TODO use constructor initialisation
+
+    public Results(
+            BigDecimal sumParam,
+            BigDecimal diffParam,
+            BigDecimal productParam,
+            BigDecimal quotientParam)
+    {
+        sum = sumParam;
+        difference = diffParam;
+        product = productParam;
+        quotient = quotientParam;
+    }
 
     public final BigDecimal getSum() {
-        return null; // FIXME
+        return sum; // FIXME
     }
 
     public final BigDecimal getDifference() {
-        return null; // FIXME
+        return difference; // FIXME
     }
 
     public final BigDecimal getProduct() {
-        return null; // FIXME
+        return product; // FIXME
     }
 
     public final BigDecimal getQuotient() {
-        return null; // FIXME
+        return quotient; // FIXME
     }
 }

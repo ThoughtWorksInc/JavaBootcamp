@@ -5,6 +5,7 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 import java.math.BigDecimal;
+import java.math.MathContext;
 
 public class CalculatorTest {
 
@@ -16,7 +17,7 @@ public class CalculatorTest {
 
         final BigDecimal result = new Calculator().calculate(params);
 
-        assertEquals(new BigDecimal(5), result);
+        assertEquals(new BigDecimal(5.0).setScale(2), result);
     }
 
     @Test
@@ -27,7 +28,7 @@ public class CalculatorTest {
 
         final BigDecimal result = new Calculator().calculate(params);
 
-        assertEquals(new BigDecimal(3), result);
+        assertEquals(new BigDecimal(3).setScale(2), result);
     }
 
     @Test
@@ -38,7 +39,7 @@ public class CalculatorTest {
 
         final BigDecimal result = new Calculator().calculate(params);
 
-        assertEquals(new BigDecimal(4.5), result);
+        assertEquals(new BigDecimal(4.5).setScale(2), result);
     }
 
     @Test
@@ -49,7 +50,7 @@ public class CalculatorTest {
 
         final BigDecimal result = new Calculator().calculate(params);
 
-        assertEquals(new BigDecimal(8), result);
+        assertEquals(new BigDecimal(8).setScale(2), result);
     }
 
     @Test(expected = ArithmeticException.class)
