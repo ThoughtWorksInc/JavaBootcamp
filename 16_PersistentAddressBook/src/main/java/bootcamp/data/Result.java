@@ -1,13 +1,27 @@
 package bootcamp.data;
 
-import java.math.BigDecimal;
 import java.util.Optional;
 
 public class Result<T> {
-    private final Status status = null; //FIXME
-    private final String statusMessage = null; //FIXME
-    private final Optional<T> value = null; //FIXME
+    public final Status status;
+    public final String message;
+    public final Optional<T> value;
 
-    //TODO Constructor. If there was an error in processing, set the relevant status, message and value to empty Optional.
-    //TODO Getters
+    public Result(final T value) {
+        this.value = Optional.of(value);
+        this.status = Status.SUCCESS;
+        this.message = "Success";
+    }
+
+    public Result(final Status status, final String message) {
+        this.value = Optional.empty();
+        this.status = status;
+        this.message = message;
+    }
+
+    public Result() {
+        this.value = Optional.empty();
+        this.status = Status.SUCCESS;
+        this.message = "";
+    }
 }

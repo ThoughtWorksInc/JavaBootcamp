@@ -3,13 +3,22 @@ package bootcamp.data;
 import java.util.Optional;
 
 public class Person {
-    private final String firstName = null; //FIXME
-    private final String secondName = null; //FIXME
-    private final Optional<Integer> id = null; //FIXME
-    private final Optional<Integer> addressId = null; //FIXME
+    public final String firstName;
+    public final String secondName;
+    public final Optional<Integer> id;
+    public final Optional<Integer> addressId;
 
-    //TODO 2 constructors, one as query for a person containing only first and second names and the second for the
-    // response to the query, containing the IDs from the database.
-    //TODO getters.
+    public Person(final String firstName, final String secondName) {
+        this.firstName = firstName;
+        this.secondName = secondName;
+        this.id = Optional.empty();
+        this.addressId = Optional.empty();
+    }
 
+    public Person(final String firstName, final String secondName, final int id, final int addressId) {
+        this.firstName = firstName;
+        this.secondName = secondName;
+        this.id = Optional.of(id);
+        this.addressId = Optional.of(addressId);
+    }
 }

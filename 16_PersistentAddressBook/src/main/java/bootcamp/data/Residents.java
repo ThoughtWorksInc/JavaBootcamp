@@ -3,9 +3,11 @@ package bootcamp.data;
 import java.util.List;
 
 public class Residents {
-    private final Address address = null; //FIXME
-    private final List<Person> residents = null; //FIXME
+    public final Address address;
+    public final List<Person> residents;
 
-    //TODO Constructor
-    //TODO Getters
+    public Residents(final Address address, final List<Person> residents) {
+        this.address = address;
+        this.residents = residents;
+    }
 }
