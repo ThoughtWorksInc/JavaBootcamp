@@ -10,8 +10,8 @@ public class CalculatorTest {
 
     @Test
     public void shouldAddTwoParams() {
-        final Params params = new Params(new BigDecimal(3.2),
-                new BigDecimal(1.8),
+        final Params params = new Params(new BigDecimal("3.2"),
+                new BigDecimal("1.8"),
                 "+");
 
         final BigDecimal result = new Calculator().calculate(params);
