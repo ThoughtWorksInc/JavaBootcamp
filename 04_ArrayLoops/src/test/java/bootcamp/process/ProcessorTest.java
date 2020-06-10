@@ -1,6 +1,7 @@
 package bootcamp.process;
 
 import bootcamp.data.Processor;
+import bootcamp.data.Summary;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -44,11 +45,13 @@ public class ProcessorTest {
         assertEquals(4d, result, 0.001);
     }
 
-    @Test(expected = ArrayIndexOutOfBoundsException.class)
+    @Test
     public void shouldGetExceptionFromGetValueWhenIndexTooLarge() {
 
         var sut = new Processor(new double[] {1,2,3});
 
         var result = sut.getValue(3);
+
+        assertEquals(Double.NaN, result, 0.001);
     }
 }

@@ -24,6 +24,12 @@ public class Processor {
     }
 
     public double getValue(int i) {
-        return array[i];
+        try {
+            return array[i];
+        } catch(ArrayIndexOutOfBoundsException e){
+            // add line for logger.log or System.out.prinLn("blah");
+            return Double.NaN;
+        }
+
     }
 }

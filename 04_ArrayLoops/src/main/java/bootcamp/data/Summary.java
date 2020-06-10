@@ -36,4 +36,23 @@ public class Summary {
     public double getAverage() {
         return average;
     }
+
+    public boolean equals(Object o){
+
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+
+        var summary = (Summary) o;
+
+        return (
+                this.average == summary.average &&
+                this.sum == summary.sum &&
+                this.count == summary.count &&
+                this.min == summary.min &&
+                this.max == summary.max);
+    }
 }
