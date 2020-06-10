@@ -8,6 +8,6 @@ import bootcamp.kata.data.Results;
 
 public class Processor {
     public Results process(final Params params) {
-        return null; // FIXME
+        return new Results(params);
     }
 }
