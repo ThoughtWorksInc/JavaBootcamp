@@ -14,4 +14,14 @@ public class Ticket {
     public int getSeat() {
         return seat;
     }
+
+    public boolean equals(Object o){
+
+        if (this == o) return true;
+
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Ticket ticket = (Ticket) o;
+        return ticket.seat == this.seat && ticket.title.equals(title);
+    }
 }

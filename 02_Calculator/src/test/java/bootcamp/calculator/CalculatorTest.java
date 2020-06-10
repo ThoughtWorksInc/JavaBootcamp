@@ -20,6 +20,8 @@ public class CalculatorTest {
         assertEquals(new BigDecimal(5.0).setScale(2), result);
     }
 
+    
+
     @Test
     public void shouldSubtractTwoParams() {
         final Params params = new Params(new BigDecimal(3.2),

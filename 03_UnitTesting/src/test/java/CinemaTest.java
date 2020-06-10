@@ -18,12 +18,37 @@ public class CinemaTest {
 
     @Test
     public void shouldNotBeAbleToBuyCinemaTicketWhenYoungerThanRestriction() {
-        fail("not implemented");
+        //given
+        int age = 11;
+        Customer customer = new Customer(age);
+        Movie movie = new Movie("Frozen 2", 12);
+        Cinema cinema = new Cinema();
+        //when
+        boolean canGetTicket = cinema.canBuyTicket(movie, customer);
+        //then
+        assertFalse(canGetTicket);
     }
 
-    @Test
+    @Test (expected = RuntimeException.class)
     public void shouldThrowExceptionWhenTryOrderTicketAndYoungerThanAgeRestriction() {
-        fail("not implemented");
+
+        //arrange
+        int age = 11;
+        Customer customer = new Customer(age);
+        Movie movie = new Movie("Frozen 2", 12);
+
+        // act
+        Cinema sut = new Cinema();
+        String message = "";
+
+        try {
+            Ticket result = sut.orderTicket(movie, customer, 15);
+        } catch (Exception e){
+            message = e.getMessage();
+            throw e;
+        }
+
+        assertEquals("too young", message);
     }
 
     @Test

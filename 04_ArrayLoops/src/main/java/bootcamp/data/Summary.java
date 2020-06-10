@@ -1,11 +1,21 @@
 package bootcamp.data;
 
+import java.util.OptionalDouble;
+
 public class Summary {
-    private final double min = Double.NaN; //FIXME
-    private final double max = Double.NaN; //FIXME
-    private final double sum = Double.NaN; //FIXME
-    private final double count = Double.NaN; //FIXME
-    private final double average = Double.NaN; //FIXME
+    private final double min;
+    private final double max;
+    private final double sum;
+    private final int count;
+    private final double average;
+
+    public Summary(double min, double max, double sum, int count, double average) {
+        this.min = min;
+        this.max = max;
+        this.sum = sum;
+        this.count = count;
+        this.average = average;
+    }
 
     public double getMin() {
         return min;
@@ -19,7 +29,7 @@ public class Summary {
         return sum;
     }
 
-    public double getCount() {
+    public int getCount() {
         return count;
     }
 
