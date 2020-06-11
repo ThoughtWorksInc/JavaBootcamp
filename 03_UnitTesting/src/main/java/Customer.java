@@ -8,11 +8,4 @@ public class Customer {
     public int getAge() {
         return age;
     }
-
-    public boolean canBuyAlcohol() {
-        return false;
-    }
-
-    public void orderBeer(int i) {
-    }
 }
