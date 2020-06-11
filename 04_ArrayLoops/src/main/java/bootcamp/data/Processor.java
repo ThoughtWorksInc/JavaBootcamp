@@ -14,8 +14,8 @@ public class Processor {
             double sum = 0;
             double count = array.length;
             for(double d :array) {
-                min = (d < min) ? d : min;
-                max = (d > max) ? d : max;
+                min = Math.min(d, min);
+                max = Math.max(d, max);
                 sum += d;
             }
             double average = sum/count;

@@ -13,32 +13,25 @@ public class PersonLocator {
     }
 
     public Optional<Location> find(final Person person) {
-        Optional<Location> location = Optional.empty();
-
         for(int i = 0; i < people.length; i++){
             for(int j = 0; j < people[0].length; j++){
                 if(people[i][j].equals(person)){
-                    location = Optional.of(new Location(i, j));
-                    break;
+                    return Optional.of(new Location(i, j));
                 }
             }
         }
-
 //        int i = 0;
 //        int j = 0;
-//        while(!location.isPresent()){
-//            while(i < people.length){
-//                while(j < people[0].length){
-//                    if(people[i][j].equals(person)){
-//                        location = Optional.of(new Location(i, j));
-//                    }
-//                    j++;
+//        while(i < people.length){
+//            while(j < people[0].length){
+//                if(people[i][j].equals(person)){
+//                    return Optional.of(new Location(i, j));
 //                }
-//                i++;
-//                j = 0;
+//                j++;
 //            }
+//            i++;
+//            j = 0;
 //        }
-
-        return location;
+        return Optional.empty();
     }
 }
