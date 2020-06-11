@@ -4,27 +4,31 @@ import bootcamp.data.Address;
 import bootcamp.data.Person;
 import bootcamp.data.PersonAddressPair;
 
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
 
 public class AddressDirectory {
-    private final Map<Person, Address> directory = null; //FIXME
+    private Map<Person, Address> directory;
+    private List<PersonAddressPair> addressList;
 
     public AddressDirectory(final List<PersonAddressPair> addressList) {
-        //TODO convert addressList to a HashMap assigned to directory.
+        this.addressList = addressList;
+        populateMap();
     }
 
     public Optional<Address> getAddress(final Person person) {
-        //FIXME
-        return null;
+        return directory.containsKey(person) ? Optional.of(directory.get(person)) : Optional.empty();
     }
 
     public void updateAddress(final PersonAddressPair personAddress) {
-        //FIXME
+        directory.put(personAddress.getPerson(), personAddress.getAddress());
     }
 
     public void remove(final Person person) {
-        //FIXME
+        directory.remove(person);
+    }
+
+    public void populateMap() {
+        directory = new HashMap<Person, Address>();
+        addressList.forEach(pair -> directory.put(pair.getPerson(), pair.getAddress()));
     }
 }
