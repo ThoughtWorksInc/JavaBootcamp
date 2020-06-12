@@ -6,16 +6,17 @@ package bootcamp.kata.data;
 import java.math.BigDecimal;
 
 public class Results {
+
     private final BigDecimal sum;
     private final BigDecimal difference;
     private final BigDecimal product;
     private final BigDecimal quotient;
 
-    public Results(Params params){
-        this.sum = params.getX().add(params.getY());
-        this.difference = params.getX().subtract(params.getY());
-        this.product = params.getX().multiply(params.getY());
-        this.quotient = params.getX().divide(params.getY());
+    public Results(BigDecimal sum, BigDecimal difference, BigDecimal product, BigDecimal quotient) {
+        this.sum = sum;
+        this.difference = difference;
+        this.product = product;
+        this.quotient = quotient;
     }
 
     public final BigDecimal getSum() {
