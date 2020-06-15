@@ -1,11 +1,11 @@
 package bootcamp.data;
 
 public class Summary {
-    private double min = Double.NaN;
-    private double max = Double.NaN;
-    private double sum = Double.NaN;
-    private double count = Double.NaN;
-    private double average = Double.NaN;
+    private final double min;
+    private final double max;
+    private final double sum;
+    private final double count;
+    private final double average;
 
     public Summary(
             final double min,

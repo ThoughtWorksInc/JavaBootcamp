@@ -1,26 +1,19 @@
-package bootcamp.calculator;
+package bootcamp.process.calculator;
 
 import bootcamp.data.Params;
 import bootcamp.data.Result;
 import bootcamp.data.Status;
-import bootcamp.process.calculator.Calculator;
-import bootcamp.process.element.ElementFactory;
-import bootcamp.process.element.impl.ElementFactoryImpl;
-import org.junit.Before;
 import org.junit.Test;
-import static org.junit.Assert.*;
 
 import java.math.BigDecimal;
 import java.util.Optional;
 
+import static org.junit.Assert.*;
+
 public class CalculatorTest {
 
-    private Calculator calculator;
-    @Before
-    public void setUp() {
-        ElementFactory factory = new ElementFactoryImpl();
-        calculator = new Calculator(factory);
-    }
+    private Calculator calculator = new Calculator();
+
 
     @Test
     public void shouldAddTwoParams() {
@@ -31,7 +24,7 @@ public class CalculatorTest {
 
         final Result result = calculator.calculate(params);
 
-        assertEquals(new BigDecimal("5"), result.getValue().get());
+        assertEquals(new BigDecimal("5.0"), result.getValue().get());
     }
 
     @Test
@@ -42,7 +35,7 @@ public class CalculatorTest {
 
         final Result result = calculator.calculate(params);
 
-        assertEquals(new BigDecimal("3"), result.getValue().get());
+        assertEquals(new BigDecimal("3.0"), result.getValue().get());
     }
 
     @Test
@@ -53,7 +46,7 @@ public class CalculatorTest {
 
         final Result result = calculator.calculate(params);
 
-        assertEquals(Optional.of(new BigDecimal("4.5")), result.getValue());
+        assertEquals(Optional.of(new BigDecimal("4.50")), result.getValue());
     }
 
     @Test
@@ -88,4 +81,5 @@ public class CalculatorTest {
         assertEquals("Invalid Operator", result.getStatusMessage());
         assertEquals(Status.INVALID_OPERATOR, result.getStatus());
     }
+
 }

@@ -13,7 +13,7 @@ import java.math.BigDecimal;
 public class CalculatorApp {
     public static void main(final String[] args) {
 
-        BigDecimal x = new BigDecimal(args[0]); //FIX ME;
+        BigDecimal x = new BigDecimal(args[0]);
         BigDecimal y = new BigDecimal(args[1]);
         String operator = args[2];
 

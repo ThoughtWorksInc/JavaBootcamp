@@ -8,6 +8,7 @@ import bootcamp.process.element.ProcessingElement;
 
 import java.math.BigDecimal;
 import java.math.MathContext;
+import java.util.NoSuchElementException;
 import java.util.Optional;
 
 
@@ -26,13 +27,6 @@ public class Calculator {
         MathContext mc = new MathContext(2);
 
         Optional<ProcessingElement> operator = factory.create(params.getOperator());
-
-        if (operator.isEmpty()) {
-            status = Status.INVALID_OPERATOR;
-            statusMessage = "Invalid Operator";
-            return new Result(status, statusMessage, value);
-        }
-
         try {
             status = Status.SUCCESS;
             statusMessage = "Success";
@@ -42,6 +36,9 @@ public class Calculator {
             status = Status.ARITHMETIC_ERROR;
             statusMessage = "Arithmetic Error";
 
+        } catch (NoSuchElementException ex) {
+            status = Status.INVALID_OPERATOR;
+            statusMessage = "Invalid Operator";
         }
 
         return new Result(status, statusMessage, value);

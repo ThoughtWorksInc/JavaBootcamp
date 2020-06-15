@@ -15,7 +15,6 @@ public class Result {
     }
 
     //TODO Constructor. If there was an error in processing, set the relevant status, message and value to empty Optional.
-    //TODO Getters
 
     public Status getStatus() {
         return status;
