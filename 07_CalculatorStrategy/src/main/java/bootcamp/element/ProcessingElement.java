@@ -1,4 +1,4 @@
-package bootcamp.process.element;
+package bootcamp.element;
 
 import java.math.BigDecimal;
 

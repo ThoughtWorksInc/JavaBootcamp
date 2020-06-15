@@ -1,8 +1,8 @@
-package bootcamp.process.calculator;
+package bootcamp.calculator;
 
 import bootcamp.data.Params;
 import bootcamp.data.Result;
-import bootcamp.process.element.ElementFactory;
+import bootcamp.element.ElementFactory;
 
 
 public class Calculator {

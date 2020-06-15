@@ -1,6 +1,5 @@
 package bootcamp.data;
 
 public enum Status {
-    //TODO Add status for results.
-    //Typical status enums, success, arithmetic error, invalid operation.
+    ARITHMETIC_ERROR, INVALID_OPERATION, SUCCESS
 }
