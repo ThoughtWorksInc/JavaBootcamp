@@ -6,17 +6,20 @@ package bootcamp.kata.data;
 import java.math.BigDecimal;
 
 public class Params {
-    private final BigDecimal x = new BigDecimal(0); // TODO use constructor initialisation
-    private final BigDecimal y = new BigDecimal(0); // TODO use constructor initialisation
 
-    public Params(final BigDecimal x, final BigDecimal y) {
+    private final BigDecimal x;
+    private final BigDecimal y;
+
+    public Params(BigDecimal x, BigDecimal y){
+        this.x = x;
+        this.y = y;
     }
 
     public final BigDecimal getX() {
-        return null; // FIXME
+        return x;
     }
 
     public final BigDecimal getY() {
-        return null; // FIXME
+        return y;
     }
 }
