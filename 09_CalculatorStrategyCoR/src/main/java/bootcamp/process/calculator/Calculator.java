@@ -19,10 +19,10 @@ public class Calculator {
     private ElementFactory factory;
 
     public Calculator() {
-        this.factory = new AdditionFactory("+");
-        this.factory = new SubtractionFactory(this.factory, "-");
-        this.factory = new MultiplicationFactory(this.factory, "x");
-        this.factory = new DivisionFactory(this.factory, "/");
+        this.factory = new AdditionFactory();
+        this.factory = new SubtractionFactory(this.factory);
+        this.factory = new MultiplicationFactory(this.factory);
+        this.factory = new DivisionFactory(this.factory);
     }
 
     public Result calculate(final Params params) {

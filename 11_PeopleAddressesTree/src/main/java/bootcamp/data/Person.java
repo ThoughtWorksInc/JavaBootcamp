@@ -35,6 +35,12 @@ public class Person implements Comparable<Person> {
 
     @Override
     public int compareTo(Person person) {
-        return firstName.equals(person.firstName) && secondName.equals(person.getSecondName()) ?  0 : 1;
+        // less than , great than, equals
+        int comparison = firstName.compareTo(person.firstName);
+        if (comparison == 0) {
+            return secondName.compareTo(person.secondName);
+        } else {
+            return comparison;
+        }
     }
 }

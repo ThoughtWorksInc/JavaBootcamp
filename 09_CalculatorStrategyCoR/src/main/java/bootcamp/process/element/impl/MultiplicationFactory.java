@@ -4,12 +4,15 @@ import bootcamp.process.element.ElementFactory;
 import bootcamp.process.element.ProcessingElement;
 
 public class MultiplicationFactory extends ElementFactory {
-    public MultiplicationFactory(ElementFactory nextFactory, String operator) {
-        super(nextFactory, operator);
+
+    public static final String OPERATOR = "x";
+
+    public MultiplicationFactory(ElementFactory nextFactory) {
+        super(nextFactory, OPERATOR);
     }
 
-    public MultiplicationFactory(String operator) {
-        super(operator);
+    public MultiplicationFactory() {
+        super(OPERATOR);
     }
 
     @Override

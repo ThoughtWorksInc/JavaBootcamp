@@ -4,12 +4,16 @@ import bootcamp.process.element.ElementFactory;
 import bootcamp.process.element.ProcessingElement;
 
 public class AdditionFactory extends ElementFactory {
-    public AdditionFactory(ElementFactory nextFactory, String operator) {
-        super(nextFactory, operator);
+
+    public static final String OPERATOR = "+";
+
+    public AdditionFactory(ElementFactory nextFactory) {
+
+        super(nextFactory, OPERATOR);
     }
 
-    public AdditionFactory(String operator) {
-        super(operator);
+    public AdditionFactory() {
+        super(OPERATOR);
     }
 
     @Override

@@ -4,8 +4,11 @@ import bootcamp.process.element.ElementFactory;
 import bootcamp.process.element.ProcessingElement;
 
 public class DivisionFactory extends ElementFactory {
-    public DivisionFactory(ElementFactory nextFactory, String operator) {
-        super(nextFactory, operator);
+
+    public static final String OPERATOR = "/";
+
+    public DivisionFactory(ElementFactory nextFactory) {
+        super(nextFactory, OPERATOR);
     }
 
     @Override
@@ -13,7 +16,7 @@ public class DivisionFactory extends ElementFactory {
         return new Division();
     }
 
-    public DivisionFactory(String operator) {
-        super(operator);
+    public DivisionFactory() {
+        super(OPERATOR);
     }
 }

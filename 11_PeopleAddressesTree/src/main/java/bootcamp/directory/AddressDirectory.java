@@ -15,19 +15,19 @@ public class AddressDirectory {
     public AddressDirectory(final List<PersonAddressPair> addressList) {
         this.directory = new TreeMap<>();
         for (PersonAddressPair entry : addressList) {
-            this.directory.put(entry.getPerson(), entry.getAddress());
+            directory.put(entry.getPerson(), entry.getAddress());
         }
     }
 
     public Optional<Address> getAddress(final Person person) {
-        return Optional.ofNullable(this.directory.get(person));
+        return Optional.ofNullable(directory.get(person));
     }
 
     public void updateAddress(final PersonAddressPair personAddress) {
-       this.directory.put(personAddress.getPerson(), personAddress.getAddress());
+       directory.put(personAddress.getPerson(), personAddress.getAddress());
     }
 
     public void remove(final Person person) {
-        this.directory.remove(person);
+        directory.remove(person);
     }
 }
