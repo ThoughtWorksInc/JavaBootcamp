@@ -2,6 +2,8 @@ package bootcamp.process.element;
 
 import java.util.Optional;
 
-public interface ElementFactory {
+public interface ProcessingElementFactory {
     Optional<ProcessingElement> create(final String operator);
 }
+
+

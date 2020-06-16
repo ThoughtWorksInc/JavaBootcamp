@@ -17,7 +17,7 @@ public class CalculatorTest {
 
         final BigDecimal result = new Calculator().calculate(params);
 
-        assertEquals(new BigDecimal(5.0).setScale(2), result);
+        assertEquals(new BigDecimal(5.0), result);
     }
 
     

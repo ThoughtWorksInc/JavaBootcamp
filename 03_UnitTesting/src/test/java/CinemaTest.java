@@ -61,7 +61,7 @@ public class CinemaTest {
         Movie movie = new Movie(title, 12);
         Cinema cinema = new Cinema();
         //when
-        Ticket ticket = cinema.orderTicket(movie, customer, seat);
+        Ticket ticket = cinema.orderTicket(movie, customer, 42);
         //then
         assertEquals(new Ticket(title, seat), ticket);
     }

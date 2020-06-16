@@ -24,4 +24,12 @@ public class Ticket {
         Ticket ticket = (Ticket) o;
         return ticket.seat == this.seat && ticket.title.equals(title);
     }
+
+    @Override
+    public String toString() {
+        return "Ticket{" +
+                "title='" + title + '\'' +
+                ", seat=" + seat +
+                '}';
+    }
 }

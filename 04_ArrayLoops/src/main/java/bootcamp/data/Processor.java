@@ -14,20 +14,20 @@ public class Processor {
 
         if (array.length == 0) return new Summary(Double.NaN, Double.NaN, Double.NaN, 0, Double.NaN);
 
-        double min = Arrays.stream(array).min().getAsDouble();
+        //double min = Arrays.stream(array).min().getAsDouble();
         double max = Arrays.stream(array).max().getAsDouble();
         double sum = Arrays.stream(array).sum();
         int count = array.length;
         double average = Arrays.stream(array).average().getAsDouble();
 
-        return new Summary(min, max, sum, count, average);
+        return new Summary(Arrays.stream(array).min().getAsDouble(), max, sum, count, average);
     }
 
     public double getValue(int i) {
         try {
             return array[i];
         } catch(ArrayIndexOutOfBoundsException e){
-            // add line for logger.log or System.out.prinLn("blah");
+            // add line for logger.log or System.out.prinLn("array was out of bounds....");
             return Double.NaN;
         }
 

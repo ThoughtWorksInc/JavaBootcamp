@@ -2,16 +2,47 @@ package bootcamp.process.calculator;
 
 import bootcamp.data.Params;
 import bootcamp.data.Result;
-import bootcamp.process.element.ElementFactory;
+import bootcamp.data.Status;
+import bootcamp.process.element.ProcessingElementFactory;
+import bootcamp.process.element.ProcessingElement;
+
+import java.util.Optional;
 
 
 public class Calculator {
-    private final ElementFactory factory = null; //FIXME
+    private final ProcessingElementFactory factory;
 
-    //TODO Constructor to initialise factory.
+    public Calculator(ProcessingElementFactory factory) {
+
+        this.factory = factory;
+    }
 
     public Result calculate(final Params params) {
-        //FIXME using the factory and implementations of ProcessingElement
-        return null;
+
+        String operator = params.getOperator();
+        double x = params.getX();
+        double y = params.getY();
+        Optional<ProcessingElement> element = factory.create(operator);
+
+        if (element.isEmpty()) {
+            return new Result(
+                    Status.Failure,
+                    "Invalid operator",
+                    Optional.empty());
+        }
+
+        try {
+            return new Result(
+                    Status.Success,
+                    "",
+                    Optional.of(element.get().process(x, y)));
+
+        } catch (ArithmeticException e) {
+            return new Result(
+                    Status.Failure,
+                    "Arithmetic Exception:" + e.getMessage(),
+                    Optional.empty()
+            );
+        }
     }
 }
