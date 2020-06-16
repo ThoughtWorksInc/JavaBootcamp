@@ -25,6 +25,9 @@ public class Result {
     public Optional<BigDecimal> getValue() {
         return value;
     }
-    
-    //TODO Constructor. If there was an error in processing, set the relevant status, message and value to empty Optional.
+
+    @Override
+    public String toString() {
+        return " = " + value.get();
+    }
 }

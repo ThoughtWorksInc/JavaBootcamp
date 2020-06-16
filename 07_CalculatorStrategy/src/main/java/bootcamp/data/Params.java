@@ -24,4 +24,9 @@ public class Params {
     public String getOperator() {
         return operator;
     }
+
+    @Override
+    public String toString() {
+        return x + " " + operator + " " + y;
+    }
 }
