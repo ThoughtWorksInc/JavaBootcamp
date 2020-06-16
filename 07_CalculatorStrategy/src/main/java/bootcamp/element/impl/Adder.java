@@ -3,6 +3,7 @@ package bootcamp.element.impl;
 import bootcamp.element.ProcessingElement;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 
 public class Adder implements ProcessingElement {
 

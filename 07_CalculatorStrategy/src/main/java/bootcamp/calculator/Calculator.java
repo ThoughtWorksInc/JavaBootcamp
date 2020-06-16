@@ -19,17 +19,16 @@ public class Calculator {
 
     public Result calculate(final Params params) {
         Optional<ProcessingElement> processingElement = factory.create(params.getOperator());
-        Optional<BigDecimal> value = Optional.empty();
-        Status status = Status.SUCCESS;
         if(processingElement.isEmpty()){
-            status = Status.INVALID_OPERATION;
+            return new Result(Status.INVALID_OPERATION, Optional.empty());
         } else {
             try {
-                value = Optional.of(processingElement.get().process(params.getX(), params.getY()));
+                ProcessingElement processingElement1 = processingElement.get();
+                Optional<BigDecimal> value = Optional.of(processingElement1.process(params.getX(), params.getY()));
+                return new Result(Status.SUCCESS, value);
             } catch(ArithmeticException e){
-                status = Status.ARITHMETIC_ERROR;
+                return new Result(Status.ARITHMETIC_ERROR, Optional.empty());
             }
         }
-        return new Result(status, status.getMessage(), value);
     }
 }

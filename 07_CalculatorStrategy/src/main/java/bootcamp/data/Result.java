@@ -5,12 +5,10 @@ import java.util.Optional;
 
 public class Result {
     private final Status status;
-    private final String statusMessage;
     private final Optional<BigDecimal> value;
 
-    public Result(Status status, String statusMessage, Optional<BigDecimal> value) {
+    public Result(Status status, Optional<BigDecimal> value) {
         this.status = status;
-        this.statusMessage = statusMessage;
         this.value = value;
     }
 
@@ -18,8 +16,8 @@ public class Result {
         return status;
     }
 
-    public String getStatusMessage() {
-        return statusMessage;
+    public String getMessage(){
+        return status.getMessage();
     }
 
     public Optional<BigDecimal> getValue() {

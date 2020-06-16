@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class DividerTest {
 
     @Test
-    void shouldReturnCorrectResultGivenValidParameters() {
+    void shouldCorrectlyDivideTwoNumbersGivenValidInput() {
         ProcessingElement divider = new Divider();
         BigDecimal expected = new BigDecimal("7.00");
         BigDecimal actual = divider.process(new BigDecimal("21"), new BigDecimal("3"));

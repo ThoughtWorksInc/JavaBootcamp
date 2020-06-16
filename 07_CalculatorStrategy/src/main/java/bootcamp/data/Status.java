@@ -1,7 +1,7 @@
 package bootcamp.data;
 
 public enum Status {
-    ARITHMETIC_ERROR("Arithmetic Error"),
+    ARITHMETIC_ERROR("Arithmetic Error: Cannot divide by 0"),
     INVALID_OPERATION("Invalid Operation"),
     SUCCESS("");
 

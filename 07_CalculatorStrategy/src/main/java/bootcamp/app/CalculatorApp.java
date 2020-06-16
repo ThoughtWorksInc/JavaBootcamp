@@ -22,6 +22,10 @@ public class CalculatorApp {
 
         Calculator calculator = new Calculator(new ElementFactoryImpl());
         Result result = calculator.calculate(params);
-        System.out.println(params.toString() + result.toString());
+        if(result.getValue().isEmpty()){
+            System.out.println(result.getMessage());
+        } else {
+            System.out.println(params.toString() + result.toString());
+        }
     }
 }
