@@ -2,12 +2,14 @@ package bootcamp.process.calculator;
 
 import bootcamp.data.Params;
 import bootcamp.data.Status;
-import bootcamp.process.calculator.Calculator;
 import bootcamp.process.element.*;
 import bootcamp.process.element.impl.AddElement;
 import bootcamp.process.element.impl.BasicProcessingElementFactory;
 import bootcamp.process.element.impl.DivElement;
 import org.junit.Test;
+
+import java.util.Collections;
+import java.util.Map;
 import java.util.Optional;
 import static org.junit.Assert.*;
 import static org.mockito.Mockito.*;

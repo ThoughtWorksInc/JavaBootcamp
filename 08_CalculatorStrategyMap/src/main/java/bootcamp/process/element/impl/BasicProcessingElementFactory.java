@@ -11,9 +11,9 @@ public class BasicProcessingElementFactory implements ProcessingElementFactory {
 
     private final Map<String, ProcessingElement> map;
 
-    public BasicProcessingElementFactory() {
+    public BasicProcessingElementFactory(Map<String, ProcessingElement> map) {
 
-        this.map = populateProcessingElements();
+        this.map = map;
     }
 
     @Override
@@ -24,14 +24,5 @@ public class BasicProcessingElementFactory implements ProcessingElementFactory {
         } catch (NullPointerException e){
             return Optional.empty();
         }
-    }
-
-    private HashMap<String, ProcessingElement> populateProcessingElements() {
-        return new HashMap<String, ProcessingElement>(){
-            {put("+", new AddElement());
-            put("-", new SubtractElement());
-            put("*", new MultElement());
-            put("/", new DivElement());}
-        };
     }
 }

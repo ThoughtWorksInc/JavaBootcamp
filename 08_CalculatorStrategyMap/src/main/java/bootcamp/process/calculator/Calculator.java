@@ -5,7 +5,13 @@ import bootcamp.data.Result;
 import bootcamp.data.Status;
 import bootcamp.process.element.ProcessingElementFactory;
 import bootcamp.process.element.ProcessingElement;
+import bootcamp.process.element.impl.AddElement;
+import bootcamp.process.element.impl.DivElement;
+import bootcamp.process.element.impl.MultElement;
+import bootcamp.process.element.impl.SubtractElement;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Optional;
 
 

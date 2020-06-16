@@ -24,4 +24,13 @@ public class Result {
     public Optional<Double> getValue() {
         return value;
     }
+
+    @Override
+    public String toString() {
+        return "Result{" +
+                "status=" + status +
+                ", statusMessage='" + statusMessage + '\'' +
+                ", value=" + value +
+                '}';
+    }
 }

@@ -1,6 +1,7 @@
 package bootcamp.data;
 
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.stream.DoubleStream;
 
 public class Processor {
@@ -14,7 +15,8 @@ public class Processor {
 
         if (array.length == 0) return new Summary(Double.NaN, Double.NaN, Double.NaN, 0, Double.NaN);
 
-        //double min = Arrays.stream(array).min().getAsDouble();
+
+        double min = Arrays.stream(array).min().getAsDouble();
         double max = Arrays.stream(array).max().getAsDouble();
         double sum = Arrays.stream(array).sum();
         int count = array.length;
