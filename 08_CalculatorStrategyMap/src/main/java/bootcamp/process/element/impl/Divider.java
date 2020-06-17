@@ -1,14 +1,13 @@
-package bootcamp.element.impl;
-
-import bootcamp.element.ProcessingElement;
+package bootcamp.process.element.impl;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 
-public class Adder implements ProcessingElement {
+public class Divider implements bootcamp.process.element.ProcessingElement {
 
     @Override
     public BigDecimal process(BigDecimal x, BigDecimal y) {
-        return x.add(y);
+        return x.divide(y, 2, RoundingMode.HALF_DOWN);
     }
 
     @Override
@@ -17,6 +16,6 @@ public class Adder implements ProcessingElement {
         if (obj == null) {
             return false;
         }
-    return getClass() == obj.getClass();
+        return getClass() == obj.getClass();
     }
 }

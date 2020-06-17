@@ -1,14 +1,12 @@
-package bootcamp.element.impl;
-
-import bootcamp.element.ProcessingElement;
+package bootcamp.process.element.impl;
 
 import java.math.BigDecimal;
 
-public class Adder implements ProcessingElement {
+public class Multiplier implements bootcamp.process.element.ProcessingElement {
 
     @Override
     public BigDecimal process(BigDecimal x, BigDecimal y) {
-        return x.add(y);
+        return x.multiply(y);
     }
 
     @Override
@@ -17,6 +15,6 @@ public class Adder implements ProcessingElement {
         if (obj == null) {
             return false;
         }
-    return getClass() == obj.getClass();
+        return getClass() == obj.getClass();
     }
 }
