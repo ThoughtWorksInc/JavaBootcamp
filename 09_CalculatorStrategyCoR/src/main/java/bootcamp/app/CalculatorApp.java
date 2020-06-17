@@ -15,17 +15,21 @@ public class CalculatorApp {
         String input = scanner.nextLine();
         String[] splitInput = input.split(" ");
 
-        BigDecimal x = new BigDecimal(splitInput[0]);
-        BigDecimal y = new BigDecimal(splitInput[2]);
-        Params params = new Params(x, y, splitInput[1]);
-
-        Calculator calculator = new Calculator();
-        Result result = calculator.calculate(params);
-        if(result.getValue().isEmpty()){
-            System.out.println(result.getMessage());
-        } else {
-            System.out.println(params.toString() + result.toString());
+        try{
+            BigDecimal x = new BigDecimal(splitInput[0]);
+            BigDecimal y = new BigDecimal(splitInput[2]);
+            Params params = new Params(x, y, splitInput[1]);
+            Calculator calculator = new Calculator();
+            Result result = calculator.calculate(params);
+            if(result.getValue().isEmpty()){
+                System.out.println(result.getMessage());
+            } else {
+                System.out.println(params.toString() + result.toString());
+            }
+        } catch(NumberFormatException e){
+            System.out.println("INVALID INPUT - Not a number");
         }
+
     }
 
 }
