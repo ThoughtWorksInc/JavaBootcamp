@@ -41,7 +41,8 @@ public class AddressDirectoryTest {
 
     @Test
     public void getAddressWhenPersonExistsReturnsOptionalAddress() {
-        assertEquals(Optional.of(this.addressOne), directory.getAddress(this.personOne));
+        assertEquals(Optional.of(this.addressOne),
+                directory.getAddress(this.personOne));
     }
 
     @Test
@@ -105,6 +106,7 @@ public class AddressDirectoryTest {
     public void removeWhenPersonExists() {
         var result = this.directory.remove(this.personOne);
         assertEquals(Optional.empty(), this.directory.getAddress(this.personOne));
+        assertFalse(directory.getPeople(addressOne).contains(personOne));
         assertEquals(Status.SUCCESS, result);
     }
 

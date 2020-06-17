@@ -5,31 +5,40 @@ import bootcamp.data.Person;
 import bootcamp.data.PersonAddressPair;
 import bootcamp.data.Status;
 
-import javax.swing.text.html.Option;
 import java.util.*;
-import java.util.Map.Entry;
 
 public class AddressDirectory {
-    private final Map<Person, Address> directory;
+    private final Map<Person, Address> personDirectory;
+    private final Map<Address, List<Person>> addressDirectory;
 
-    public AddressDirectory(final List<PersonAddressPair> addressList) {
-        this.directory = new HashMap<>();
+    public AddressDirectory(List<PersonAddressPair> addressList) {
+        personDirectory = new HashMap<>();
+        addressDirectory = new HashMap<>();
         for (PersonAddressPair entry : addressList) {
-            this.directory.put(entry.getPerson(), entry.getAddress());
+            Person person = entry.getPerson();
+            Address address = entry.getAddress();
+            personDirectory.put(person, address);
+            populateAddressDirectory(person, address);
+        }
+    }
+
+    private void populateAddressDirectory(Person person, Address address) {
+        if (addressDirectory.containsKey(address)) {
+            var people = addressDirectory.get(address);
+            people = new ArrayList<>(people);
+            people.add(person);
+            addressDirectory.replace(address, people);
+        } else {
+            addressDirectory.put(address, Collections.singletonList(person));
         }
     }
 
     public Optional<Address> getAddress(final Person person) {
-        return Optional.ofNullable(this.directory.get(person));
+        return Optional.ofNullable(this.personDirectory.get(person));
     }
 
     public List<Person> getPeople(final Address address) {
-        List<Person> people = new ArrayList<>();
-        for (Entry entry : directory.entrySet())
-            if (entry.getValue().equals(address)) {
-                people.add((Person) entry.getKey());
-            }
-        return people;
+        return addressDirectory.getOrDefault(address, new ArrayList<>());
     }
 
     public Status updateAddress(final Address existingAddress, final Address newAddress) {
@@ -37,6 +46,8 @@ public class AddressDirectory {
         for (Person person : people) {
             updateAddress(new PersonAddressPair(person, newAddress));
         }
+        addressDirectory.remove(existingAddress, people);
+        addressDirectory.put(newAddress, people);
         return getStatus(people);
     }
 
@@ -49,13 +60,27 @@ public class AddressDirectory {
     }
 
     public Status updateAddress(final PersonAddressPair personAddress) {
-        this.directory.put(personAddress.getPerson(), personAddress.getAddress());
+        var person = personAddress.getPerson();
+        var oldAddress = personDirectory.get(person);
+        var newAddress = personAddress.getAddress();
+        personDirectory.put(person, newAddress);
+        removePerson(person, oldAddress);
         return Status.SUCCESS;
     }
 
+    private void removePerson(Person person, Address address) {
+        var people = getPeople(address);
+        people = new ArrayList<>(people);
+        people.remove(person);
+        addressDirectory.replace(address, people);
+    }
+
+
+
     public Status remove(final Person person) {
-        if (directory.containsKey(person)) {
-            directory.remove(person);
+        if (personDirectory.containsKey(person)) {
+            removePerson(person, getAddress(person).get());
+            personDirectory.remove(person);
             return Status.SUCCESS;
         } else {
             return Status.KEY_NOT_FOUND;
@@ -63,11 +88,11 @@ public class AddressDirectory {
     }
 
 
-    public Status remove(final Address address) {
+    public void remove(final Address address) {
         List<Person> people = this.getPeople(address);
         for (Person person: people) {
-            this.directory.remove(person);
+            personDirectory.remove(person);
         }
-        return getStatus(people);
+        addressDirectory.remove(address, people);
     }
 }
