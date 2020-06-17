@@ -7,24 +7,25 @@ import bootcamp.data.PersonAddressPair;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+import java.util.TreeMap;
 
 public class AddressDirectory {
-    private final Map<Person, Address> directory = null; //FIXME
+    private final Map<Person, Address> directory;
 
     public AddressDirectory(final List<PersonAddressPair> addressList) {
-        //TODO convert addressList to a TreeMap assigned to directory.
+        directory = new TreeMap<>();
+        addressList.forEach((p) -> directory.put(p.getPerson(), p.getAddress()));
     }
 
     public Optional<Address> getAddress(final Person person) {
-        //FIXME
-        return null;
+        return Optional.ofNullable(directory.get(person));
     }
 
     public void updateAddress(final PersonAddressPair personAddress) {
-        //FIXME
+        directory.put(personAddress.getPerson(), personAddress.getAddress());
     }
 
     public void remove(final Person person) {
-        //FIXME
+        directory.remove(person);
     }
 }
