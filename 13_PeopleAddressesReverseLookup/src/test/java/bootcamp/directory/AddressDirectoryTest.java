@@ -92,6 +92,7 @@ public class AddressDirectoryTest {
         var result = this.directory.updateAddress(new PersonAddressPair(this.personOne, this.addressTwo));
         assertEquals(Optional.of(this.addressTwo), this.directory.getAddress(this.personOne));
         assertFalse(directory.getPeople(addressOne).contains(personOne));
+        assertTrue(directory.getPeople(addressTwo).contains(personOne));
         assertEquals(Status.SUCCESS, result);
     }
 

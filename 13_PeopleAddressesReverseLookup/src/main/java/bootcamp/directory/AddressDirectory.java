@@ -64,6 +64,7 @@ public class AddressDirectory {
         var oldAddress = personDirectory.get(person);
         var newAddress = personAddress.getAddress();
         personDirectory.put(person, newAddress);
+        populateAddressDirectory(person, newAddress);
         removePerson(person, oldAddress);
         return Status.SUCCESS;
     }
