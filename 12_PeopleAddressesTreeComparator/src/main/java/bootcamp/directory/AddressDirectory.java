@@ -3,6 +3,7 @@ package bootcamp.directory;
 import bootcamp.data.Address;
 import bootcamp.data.Person;
 import bootcamp.data.PersonAddressPair;
+import bootcamp.data.Status;
 
 import java.util.*;
 
@@ -18,11 +19,13 @@ public class AddressDirectory {
         return Optional.ofNullable(directory.get(person));
     }
 
-    public void updateAddress(final PersonAddressPair personAddress) {
+    public Status updateAddress(final PersonAddressPair personAddress) {
         directory.put(personAddress.getPerson(), personAddress.getAddress());
+        return Status.SUCCESS;
     }
 
-    public void remove(final Person person) {
+    public Status remove(final Person person) {
         directory.remove(person);
+        return Status.SUCCESS;
     }
 }
