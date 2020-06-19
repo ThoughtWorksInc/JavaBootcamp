@@ -5,11 +5,8 @@ import bootcamp.data.Person;
 import bootcamp.data.PersonAddressPair;
 import bootcamp.data.Status;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 
-import javax.swing.text.html.Option;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -17,9 +14,9 @@ import java.util.Optional;
 
 import static org.junit.Assert.*;
 
-public class AddressDirectoryTest {
+public class DirectoryTest {
 
-    AddressDirectory directory;
+    Directory directory;
     Person personOne;
     Person personTwo;
     Person personThree;
@@ -36,7 +33,7 @@ public class AddressDirectoryTest {
         var list = new ArrayList<PersonAddressPair>();
         list.add(new PersonAddressPair(personOne, addressOne));
         list.add(new PersonAddressPair(personTwo, addressOne));
-        this.directory = new AddressDirectory(list);
+        this.directory = new Directory(list);
     }
 
     @Test
@@ -119,7 +116,13 @@ public class AddressDirectoryTest {
 
     @Test
     public void removeWhenAddressExists() {
-        this.directory.remove(addressOne);
+        var status = directory.remove(addressOne);
+        assertEquals(Status.SUCCESS, status);
         assertEquals(Collections.EMPTY_LIST, this.directory.getPeople(addressOne));
+    }
+    @Test
+    public void removeWhenAddressDoesNotExist() {
+        var status = directory.remove(new Address("1","2","3", "4"));
+        assertEquals(Status.KEY_NOT_FOUND, status);
     }
 }

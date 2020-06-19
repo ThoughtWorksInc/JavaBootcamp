@@ -7,30 +7,28 @@ import bootcamp.data.Status;
 
 import java.util.*;
 
-public class AddressDirectory {
+import static java.util.stream.Collectors.*;
+
+public class Directory {
     private final Map<Person, Address> personDirectory;
     private final Map<Address, List<Person>> addressDirectory;
 
-    public AddressDirectory(List<PersonAddressPair> addressList) {
-        personDirectory = new HashMap<>();
-        addressDirectory = new HashMap<>();
-        for (PersonAddressPair entry : addressList) {
-            Person person = entry.getPerson();
-            Address address = entry.getAddress();
-            personDirectory.put(person, address);
-            populateAddressDirectory(person, address);
-        }
+    public Directory(List<PersonAddressPair> addressList) {
+        personDirectory = addressList
+                .stream()
+                .collect(toMap(PersonAddressPair::getPerson, PersonAddressPair::getAddress));
+        addressDirectory = addressList
+                .stream()
+                .collect(groupingBy(PersonAddressPair::getAddress, mapping(PersonAddressPair::getPerson, toList()) ));
     }
 
     private void populateAddressDirectory(Person person, Address address) {
-        if (addressDirectory.containsKey(address)) {
-            var people = addressDirectory.get(address);
-            people = new ArrayList<>(people);
-            people.add(person);
-            addressDirectory.replace(address, people);
-        } else {
-            addressDirectory.put(address, Collections.singletonList(person));
+        if (!addressDirectory.containsKey(address)) {
+            List<Person> newList = new ArrayList<>();
+            addressDirectory.put(address, newList);
         }
+        List<Person> list = addressDirectory.get(address);
+        list.add(person);
     }
 
     public Optional<Address> getAddress(final Person person) {
@@ -43,12 +41,20 @@ public class AddressDirectory {
 
     public Status updateAddress(final Address existingAddress, final Address newAddress) {
         List<Person> people = getPeople(existingAddress);
+        updatePersonDirectory(newAddress, people);
+        updateAddressDirectory(existingAddress, newAddress, people);
+        return getStatus(people);
+    }
+
+    private void updatePersonDirectory(Address newAddress, List<Person> people) {
         for (Person person : people) {
             updateAddress(new PersonAddressPair(person, newAddress));
         }
+    }
+
+    private void updateAddressDirectory(Address existingAddress, Address newAddress, List<Person> people) {
         addressDirectory.remove(existingAddress, people);
         addressDirectory.put(newAddress, people);
-        return getStatus(people);
     }
 
     private Status getStatus(List<Person> people) {
@@ -89,11 +95,12 @@ public class AddressDirectory {
     }
 
 
-    public void remove(final Address address) {
+    public Status remove(final Address address) {
         List<Person> people = this.getPeople(address);
         for (Person person: people) {
             personDirectory.remove(person);
         }
         addressDirectory.remove(address, people);
+        return getStatus(people);
     }
 }
