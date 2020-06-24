@@ -15,6 +15,22 @@ public class Address {
         this.city = city;
     }
 
+    public String getFirstLine() {
+        return firstLine;
+    }
+
+    public String getSecondLine() {
+        return secondLine;
+    }
+
+    public String getPostCode() {
+        return postCode;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -29,5 +45,15 @@ public class Address {
     @Override
     public int hashCode() {
         return Objects.hash(firstLine, secondLine, postCode, city);
+    }
+
+    @Override
+    public String toString() {
+        return "Address{" +
+                "firstLine='" + firstLine + '\'' +
+                ", secondLine='" + secondLine + '\'' +
+                ", postCode='" + postCode + '\'' +
+                ", city='" + city + '\'' +
+                '}';
     }
 }

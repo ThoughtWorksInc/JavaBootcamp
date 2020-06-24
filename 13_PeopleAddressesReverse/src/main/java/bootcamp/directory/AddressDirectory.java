@@ -10,8 +10,8 @@ import java.util.*;
 public class AddressDirectory {
     private final Map<Person, Address> directory;
 
-    public AddressDirectory(final List<PersonAddressPair> addressList) {
-        directory = new TreeMap<>(Comparator.comparing(Person::getSecondName).thenComparing(Person::getFirstName));
+    public AddressDirectory(final List<PersonAddressPair> addressList, Comparator<Person> personComparator) {
+        directory = new TreeMap<>(personComparator);
         addressList.forEach((p) -> directory.put(p.getPerson(), p.getAddress()));
     }
 
@@ -27,9 +27,6 @@ public class AddressDirectory {
 
     public Status updateAddress(final Person person, Address address) {
         directory.put(person, address);
-        if(directory.get(person) == null){
-            return Status.KEY_NOT_FOUND;
-        }
         return Status.SUCCESS;
     }
 

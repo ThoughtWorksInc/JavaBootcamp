@@ -8,10 +8,7 @@ import bootcamp.directory.AddressDirectory;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.util.Arrays;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -35,11 +32,7 @@ class AddressDirectoryTest {
                 new Person("Michael", "Jordan"),
                 new Address("5 Carnegie Hall", "Parker Street", "RM15 8LX", "London"));
         addressList = Arrays.asList(personAddressPair1, personAddressPair2, personAddressPair3, personAddressPair4);
-        addressDirectory = new AddressDirectory(addressList);
-    }
-
-    @Test
-    void shouldCreateAnAlphabeticallyOrderedDirectorySortedBySecondNameThenFirstName() {
+        addressDirectory = new AddressDirectory(addressList, Comparator.comparing(Person::getSecondName).thenComparing(Person::getFirstName));
     }
 
     @Test
@@ -72,7 +65,7 @@ class AddressDirectoryTest {
     }
 
     @Test
-    void shouldRemoveAddressFromDirectoryIfPersonExist() {
+    void shouldRemoveAddressFromDirectoryIfPersonExists() {
         Person testPerson = new Person("Paul", "Newman");
         addressDirectory.remove(testPerson);
         assertTrue(addressDirectory.getAddress(testPerson).isEmpty());
@@ -122,14 +115,6 @@ class AddressDirectoryTest {
         Status status = addressDirectory.updateAddress(testPerson, newAddress);
         assertEquals(Status.SUCCESS, status);
     }
-
-//    @Test
-//    void shouldReturnKeyNotFoundStatusIfUpdateAddressByPersonWasNotSuccessful() {
-//        Person testPerson = new Person("Kelly", "Fisher");
-//        Address newAddress = new Address("49 Arty Lane", "Old Trafford", "AL5 0PX", "Leeds");
-//        Status status = addressDirectory.updateAddress(testPerson, newAddress);
-//        assertEquals(Status.KEY_NOT_FOUND, status);
-//    }
 
     @Test
     void shouldReturnSuccessStatusIfUpdateAddressByCurrentAddressForOnePersonWasSuccessful() {
