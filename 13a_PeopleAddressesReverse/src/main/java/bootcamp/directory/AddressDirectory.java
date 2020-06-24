@@ -40,13 +40,14 @@ public class AddressDirectory {
     }
 
     public Status update(Address currentAddress, Address newAddress) {
-        List<Person> people = addressDirectory.get(currentAddress);
-        if(people == null){
+        if(addressDirectory.containsKey(currentAddress)){
+            List<Person> people = addressDirectory.get(currentAddress);
+            addressDirectory.remove(currentAddress);
+            addressDirectory.put(newAddress, people);
+            return Status.SUCCESS;
+        } else {
             return Status.KEY_NOT_FOUND;
         }
-        addressDirectory.remove(currentAddress);
-        addressDirectory.put(newAddress, people);
-        return Status.SUCCESS;
     }
 
     public Status add(Person newPerson, Address address) {
