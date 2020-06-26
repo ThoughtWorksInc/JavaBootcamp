@@ -1,18 +1,20 @@
 package bootcamp.data;
 
-import java.util.Objects;
+import java.util.*;
 
 public class Address {
     private final String firstLine; //FIXME
     private final String secondLine; //FIXME
     private final String postCode; //FIXME
     private final String city; //FIXME
+    private List<Person> residents;
 
     public Address(String firstLine, String secondLine, String postCode, String city) {
         this.firstLine = firstLine;
         this.secondLine = secondLine;
         this.postCode = postCode;
         this.city = city;
+        residents = new ArrayList<Person>();
     }
 
     public String getFirstLine() {
@@ -29,6 +31,14 @@ public class Address {
 
     public String getCity() {
         return city;
+    }
+
+    public List<Person>  getResidents(){
+        return residents;
+    }
+
+    public void addResident(Person newResident) {
+        residents.add(newResident);
     }
 
     @Override

@@ -4,27 +4,30 @@ import bootcamp.data.Address;
 import bootcamp.data.Person;
 import bootcamp.data.PersonAddressPair;
 
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
+import java.util.function.Consumer;
 
 public class AddressDirectory {
-    private final Map<Person, Address> directory = null; //FIXME
+    private Map<Person, Address> directory = new TreeMap<Person, Address>(); //FIXME Treemap
 
     public AddressDirectory(final List<PersonAddressPair> addressList) {
-        //TODO convert addressList to a TreeMap assigned to directory.
+        Consumer<? super PersonAddressPair> addEntry = p -> directory.put(p.getPerson(), p.getAddress());
+        addressList.stream().forEach(addEntry);
     }
 
     public Optional<Address> getAddress(final Person person) {
-        //FIXME
-        return null;
+
+        return Optional.ofNullable(directory.get(person));
     }
 
     public void updateAddress(final PersonAddressPair personAddress) {
-        //FIXME
+        var person = personAddress.getPerson();
+        var address = personAddress.getAddress();
+
+        directory.put(person, address);
     }
 
     public void remove(final Person person) {
-        //FIXME
+        directory.remove(person);
     }
 }

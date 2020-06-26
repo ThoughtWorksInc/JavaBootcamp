@@ -13,4 +13,8 @@ public abstract class WordReader {
     }
 
     public abstract Result<List<String>> getWords();
+
+    public InputStream getInStream() {
+        return inStream;
+    }
 }
