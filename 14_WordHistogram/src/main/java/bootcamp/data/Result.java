@@ -43,4 +43,8 @@ public class Result<T> {
                 message.equals(result.message) &&
                 value.equals(result.value);
     }
+
+    public Status getStatus() {
+        return status;
+    }
 }

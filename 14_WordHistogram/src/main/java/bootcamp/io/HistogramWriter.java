@@ -13,4 +13,8 @@ public abstract class HistogramWriter {
     }
 
     public abstract Result<?> writeHistogram(final Map<String, Integer> histogram);
+
+    public OutputStream getOutStream(){
+        return outStream;
+    }
 }
