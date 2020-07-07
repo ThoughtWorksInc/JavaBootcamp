@@ -11,6 +11,15 @@ repositories {
     mavenCentral()
 }
 
-dependencies {
-    testCompile group: 'junit', name: 'junit', version: '4.12'
+test {
+    useJUnitPlatform()
 }
+
+dependencies {
+    compile 'org.springframework:spring-core:5.2.0.RELEASE'
+    compile 'org.springframework:spring-beans:5.2.0.RELEASE'
+    compile 'org.springframework:spring-context:5.2.0.RELEASE'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.4.2'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.4.2'
+}
+
