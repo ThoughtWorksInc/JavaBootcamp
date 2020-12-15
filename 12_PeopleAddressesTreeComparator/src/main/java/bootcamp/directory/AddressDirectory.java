@@ -3,8 +3,6 @@ package bootcamp.directory;
 import bootcamp.data.Address;
 import bootcamp.data.Person;
 import bootcamp.data.PersonAddressPair;
-
-import java.util.*;
 public class AddressDirectory {
     private final Map<Person, Address> directory;
 
