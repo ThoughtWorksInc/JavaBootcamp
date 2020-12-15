@@ -6,7 +6,7 @@ import java.io.OutputStream;
 import java.util.Map;
 
 public abstract class HistogramWriter {
-    private final OutputStream outStream;
+    public final OutputStream outStream;
 
     public HistogramWriter(final OutputStream outStream) {
         this.outStream = outStream;

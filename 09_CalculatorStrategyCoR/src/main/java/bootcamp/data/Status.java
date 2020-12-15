@@ -1,5 +1,8 @@
 package bootcamp.data;
 
 public enum Status {
-    //TODO Add status for results.
+    SUCCESS,
+    ARITHMETIC_ERROR,
+    UNKNOWN_OPERATION,
+    SYNTAX_ERROR
 }

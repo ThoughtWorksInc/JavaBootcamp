@@ -2,11 +2,27 @@ package bootcamp.data;
 
 import java.math.BigDecimal;
 
-public class Params {
-    private final BigDecimal x = null; //FIXME
-    private final BigDecimal y = null; //FIXME
-    private final String operator = null; //FIXME
 
-    //TODO Constructor
-    //TODO Getters
+public class Params {
+    private final BigDecimal x;
+    private final BigDecimal y;
+    private final String operator;
+
+    public BigDecimal getX() {
+        return x;
+    }
+
+    public BigDecimal getY() {
+        return y;
+    }
+
+    public String getOperator() {
+        return operator;
+    }
+
+    public Params(BigDecimal x, BigDecimal y, String operator) {
+        this.x = x;
+        this.y = y;
+        this.operator = operator;
+    }
 }

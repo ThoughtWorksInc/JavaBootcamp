@@ -1,12 +1,19 @@
 package bootcamp.process.element;
+import bootcamp.process.element.impl.Adder;
+import bootcamp.process.element.impl.Divider;
+import bootcamp.process.element.impl.Multiplier;
+import bootcamp.process.element.impl.Subtractor;
 
-import java.util.Map;
 import java.util.Optional;
 
-public abstract class ElementFactory {
-    protected final Map<String, ProcessingElement> elementMap = null; //FIXME
+public interface ElementFactory {
+    static Optional<ProcessingElement> create(String operator) {
+        if (operator == "+"){return Optional.of(new Adder());}
+        else if (operator == "-"){return Optional.of(new Subtractor());}
+        else if (operator == "x"){return Optional.of(new Multiplier());}
+        else if (operator == "/"){return Optional.of(new Divider());}
+        else return Optional.empty();
 
-    //TODO create a constructor that instantiates the elementMap and populate it.
-
-    public abstract Optional<ProcessingElement> create(final String operator);
+    }
 }
+
