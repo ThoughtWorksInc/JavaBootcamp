@@ -14,7 +14,7 @@ public class CalculatorTest {
                 new BigDecimal(1.8),
                 "+");
 
-        final BigDecimal result = new Calculator().calculate(params);
+        final BigDecimal result = new Calculator().calculate(params).stripTrailingZeros();
 
         assertEquals(new BigDecimal(5), result);
     }
@@ -27,7 +27,7 @@ public class CalculatorTest {
 
         final BigDecimal result = new Calculator().calculate(params);
 
-        assertEquals(new BigDecimal(3), result);
+        assertEquals(new BigDecimal(3), result.stripTrailingZeros());
     }
 
     @Test
@@ -38,7 +38,7 @@ public class CalculatorTest {
 
         final BigDecimal result = new Calculator().calculate(params);
 
-        assertEquals(new BigDecimal(4.5), result);
+        assertEquals(new BigDecimal(4.5), result.stripTrailingZeros());
     }
 
     @Test
@@ -49,7 +49,7 @@ public class CalculatorTest {
 
         final BigDecimal result = new Calculator().calculate(params);
 
-        assertEquals(new BigDecimal(8), result);
+        assertEquals(new BigDecimal(8), result.stripTrailingZeros());
     }
 
     @Test(expected = ArithmeticException.class)
