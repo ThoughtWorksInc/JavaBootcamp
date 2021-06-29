@@ -7,8 +7,12 @@ import static org.junit.Assert.*;
 public class LocatorTest {
 
     @Test
-    public void testname () {
-//        fail("Not implemented");
-        assertEquals(2,2);
+    public void shouldReturnTrueIfValueIsFound () {
+        fail("Not implemented");
+    }
+
+    @Test
+    public void shouldReturnFalseIfValueIsNotFound () {
+        fail("Not implemented");
     }
 }

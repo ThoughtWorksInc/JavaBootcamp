@@ -6,10 +6,11 @@ import bootcamp.data.Person;
 import java.util.Optional;
 
 public class PersonLocator {
-    private final Person[][] people = null; //FIXME
+    private final Person[][] people;
 
-    //TODO Constructor
-
+    public PersonLocator (Person[][] persons) {
+        this.people = persons.clone();
+    }
     public Optional<Location> find(final Person person) {
         return null; //FIXME
     }
