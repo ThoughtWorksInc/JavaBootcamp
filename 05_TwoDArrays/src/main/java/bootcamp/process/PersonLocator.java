@@ -12,6 +12,11 @@ public class PersonLocator {
         this.people = persons.clone();
     }
     public Optional<Location> find(final Person person) {
-        return null; //FIXME
+        Optional<Location> loc = Optional.empty();
+        for (int i=0; i< people.length; i++)
+            for (int j=0; j< people[i].length; j++) {
+                if (person.equals(people[i][j])) loc = Optional.of(new Location(i, j));
+            }
+        return loc;
     }
 }
