@@ -15,8 +15,12 @@ public class PersonLocator<Person> {
         Optional<Location> loc = Optional.empty();
         for (int i=0; i< people.length; i++)
             for (int j=0; j< people[i].length; j++) {
-                if (person.equals(people[i][j])) loc = Optional.of(new Location(i, j));
-                break;
+                if (person.hashCode() == people[i][j].hashCode()) {
+                    if (person.equals(people[i][j])) {
+                        loc = Optional.of(new Location(i, j));
+                        break;
+                    }
+                }
             }
         return loc;
     }

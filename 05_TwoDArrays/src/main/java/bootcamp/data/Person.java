@@ -1,5 +1,7 @@
 package bootcamp.data;
 
+import java.util.Objects;
+
 public class Person {
     private final String firstName;
     private final String lastName;
@@ -17,7 +19,13 @@ public class Person {
         return this.lastName;
     }
 
-   @Override
+//    Objects.hash(name, email)
+    @Override
+    public int hashCode() {
+        return Objects.hash(this.firstName, this.lastName);
+    }
+
+    @Override
     public boolean equals(Object object){
        if (this == object) return true;
        if (object == null || this.getClass() != object.getClass()) return false;
