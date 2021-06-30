@@ -5,7 +5,7 @@ import bootcamp.data.Person;
 
 import java.util.Optional;
 
-public class PersonLocator {
+public class PersonLocator<Person> {
     private final Person[][] people;
 
     public PersonLocator (Person[][] persons) {
@@ -16,6 +16,7 @@ public class PersonLocator {
         for (int i=0; i< people.length; i++)
             for (int j=0; j< people[i].length; j++) {
                 if (person.equals(people[i][j])) loc = Optional.of(new Location(i, j));
+                break;
             }
         return loc;
     }

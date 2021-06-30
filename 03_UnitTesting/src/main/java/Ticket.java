@@ -14,4 +14,14 @@ public class Ticket {
     public int getSeat() {
         return seat;
     }
+
+    @Override
+    public boolean equals(Object object){
+        if (this == object) return true;
+        if (object == null || this.getClass() != object.getClass()) return false;
+        Ticket ticket = (Ticket) object;
+        return this.title.equals(ticket.getTitle())
+                && this.seat == ticket.getSeat();
+    }
+
 }

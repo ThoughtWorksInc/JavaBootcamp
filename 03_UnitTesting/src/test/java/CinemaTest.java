@@ -52,7 +52,6 @@ public class CinemaTest {
         //when
         Ticket ticket = cinema.orderTicket(movie, customer, seat);
         //then
-        assertEquals(title, ticket.getTitle());
-        assertEquals(seat, ticket.getSeat());
+        assertEquals(ticket, new Ticket(movie.getTitle(), seat));
     }
 }

@@ -6,6 +6,6 @@ public class Cinema {
 
     public Ticket orderTicket(Movie movie, Customer customer, int seat) throws Exception {
         if (!canBuyTicket(movie, customer)) throw new Exception("Not age appropriate!");
-        return new Ticket("Frozen 2", 42);
+        return new Ticket(movie.getTitle(), seat);
     }
 }
