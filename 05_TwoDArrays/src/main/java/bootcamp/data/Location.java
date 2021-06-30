@@ -16,11 +16,11 @@ public class Location {
         return y;
     }
     
-    @Override
-    public boolean equals (Object object) {
-        if (this == object) return true;
-        if (object == null || this.getClass() != object.getClass()) return false;
-        Location location = (Location) object;
-        return this.x == location.getX() && this.y == location.getY();
-    }
+//    @Override
+//    public boolean equals (Object object) {
+//        if (this == object) return true;
+//        if (object == null || this.getClass() != object.getClass()) return false;
+//        Location location = (Location) object;
+//        return this.x == location.getX() && this.y == location.getY();
+//    }
 }
