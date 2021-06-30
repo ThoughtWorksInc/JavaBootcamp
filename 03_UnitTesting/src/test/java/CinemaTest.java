@@ -18,7 +18,6 @@ public class CinemaTest {
 
     @Test
     public void shouldNotBeAbleToBuyCinemaTicketWhenYoungerThanRestriction() {
-//        fail("not implemented");
         //given
         int age = 11;
         Customer customer = new Customer(age);
@@ -32,7 +31,6 @@ public class CinemaTest {
 
     @Test(expected = Exception.class)
     public void shouldThrowExceptionWhenTryOrderTicketAndYoungerThanAgeRestriction() throws Exception {
-//        fail("not implemented");
         int age = 11;
         Customer customer = new Customer(age);
         Movie movie = new Movie("Frozen 2", 12);
