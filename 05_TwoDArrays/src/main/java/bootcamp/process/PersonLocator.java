@@ -20,7 +20,7 @@ public class PersonLocator<Person> {
                         loc = Optional.of(new Location(i, j));
                         break;
                     }
-                }
+                } else continue;
             }
         return loc;
     }
