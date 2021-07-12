@@ -10,12 +10,26 @@ public class AddressDirectory {
     private final Map<Person, Address> directory;
 
     public AddressDirectory(final List<PersonAddressPair> addressList) {
-        directory = new TreeMap<>(new Comparator<Person>() {
-            @Override
-            public int compare(Person person, Person t1) {
-                return person.getFirstName().compareToIgnoreCase(t1.getFirstName());
-            }
-        });
+
+//  Anonymous classes
+//        directory = new TreeMap<>(new Comparator<Person>() {
+//            @Override
+//            public int compare(Person person, Person t1) {
+//                return person.getFirstName().compareToIgnoreCase(t1.getFirstName());
+//            }
+//        });
+
+
+//      Lambda expression
+//        directory = new TreeMap<>((Person a, Person b) -> {
+//            return a.getFirstName().compareTo(b.getFirstName());
+//        });
+
+
+//        Method reference
+        directory = new TreeMap<>(Comparator.comparing(Person::getFirstName));
+
+
         addressList.forEach((pair) -> directory.put(pair.getPerson(), pair.getAddress()));
 
     }
