@@ -99,6 +99,10 @@ public class AddressTreeComparatorTest {
         assertEquals(Status.SUCCESS,directory.updateAddress(oldAddress, newAddress));
         List<Person> newResidents = directory.getPersonsAtAddress(newAddress);
         assertEquals(oldResidents, newResidents);
+        assertTrue(directory.getPersonsAtAddress(oldAddress).isEmpty());
+        for (Person person: oldResidents) {
+            assertEquals(directory.getAddress(person).get(), newAddress);
+        }
     }
 
     @Test
