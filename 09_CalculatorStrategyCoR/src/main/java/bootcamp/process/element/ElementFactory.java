@@ -30,15 +30,15 @@ public abstract class ElementFactory {
          */
         if (operator.equals(this.operator)) return Optional.of(getProcessingElement());
         else {
-            if (nextFactory == null) return Optional.empty();
-            return nextFactory.getProcessingElement(operator);
+            if (nextFactory != null) return nextFactory.getProcessingElement(operator);
+            return Optional.empty();
+
         }
     }
 
     public abstract ProcessingElement getProcessingElement();
 
-    public ElementFactory getNextFactory() {
-        return nextFactory;
+    public String getOperator() {
+        return operator;
     }
-
 }
