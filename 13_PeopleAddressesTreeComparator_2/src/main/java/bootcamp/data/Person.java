@@ -2,7 +2,7 @@ package bootcamp.data;
 
 import java.util.Objects;
 
-public class Person {
+public class Person implements Comparable<Person> {
     private final String firstName;
     private final String secondName;
 
@@ -19,6 +19,7 @@ public class Person {
         return secondName;
     }
 
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -30,5 +31,14 @@ public class Person {
     @Override
     public int hashCode() {
         return Objects.hash(firstName, secondName);
+    }
+
+    @Override
+    public int compareTo(Person person) {
+        int compareNames = this.firstName.compareToIgnoreCase(person.getFirstName());
+        if (compareNames == 0){
+            compareNames = this.secondName.compareToIgnoreCase(person.getSecondName());
+        }
+        return compareNames;
     }
 }
