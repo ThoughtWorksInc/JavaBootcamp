@@ -45,9 +45,12 @@ public class AddressTreeComparatorTest {
     public void ShouldUpdateForExistingPerson() {
         Person person = new Person("Lorraine", "Baker");
         Address newAddress = new Address("line1B", "", "", "");
+        assertFalse(directory.getPersonsAtAddress(newAddress).contains(person));
+        
         directory.updateAddress(new PersonAddressPair(person, newAddress));
         assertEquals(directory.getAddress(person).get(), newAddress);
         assertTrue(directory.getPersonsAtAddress(newAddress).contains(person));
+
     }
 
     @Test
