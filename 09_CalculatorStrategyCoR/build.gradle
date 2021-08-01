@@ -1,7 +1,8 @@
 plugins {
     id 'java'
+    id 'application'
 }
-
+mainClassName = 'bootcamp.app.Main'
 group 'org.example'
 version '1.0-SNAPSHOT'
 
